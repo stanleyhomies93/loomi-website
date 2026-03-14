@@ -1,0 +1,110 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const partners = [
+  {
+    name: "Google AI Studio",
+    image: "/images/logo-google-ai-studio.png",
+    height: 56,
+    width: 270,
+  },
+  {
+    name: "BytePlus",
+    image: "/images/logo-byteplus.png",
+    height: 50,
+    width: 210,
+  },
+  {
+    name: "Alibaba Cloud",
+    image: "/images/logo-alibaba-cloud.png",
+    height: 50,
+    width: 245,
+  },
+  {
+    name: "STUDIO GENIE",
+    image: "/images/logo-studio-genie.png",
+    height: 50,
+    width: 225,
+  },
+  {
+    name: "COL",
+    image: "/images/logo-col.png",
+    height: 70,
+    width: 110,
+  },
+];
+
+function LogoSet() {
+  return (
+    <>
+      {partners.map((partner) => (
+        <div
+          key={partner.name}
+          className="relative mx-12 flex shrink-0 items-center justify-center opacity-60"
+          style={{ width: partner.width, height: partner.height }}
+        >
+          <Image
+            src={partner.image}
+            alt={partner.name}
+            fill
+            className="object-contain"
+          />
+        </div>
+      ))}
+    </>
+  );
+}
+
+export default function Partnerships() {
+  return (
+    <section className="relative bg-[#000421] py-24">
+      <div className="mx-auto max-w-[1240px] px-6">
+        <motion.h2
+          className="mb-16 text-center text-[48px] font-semibold leading-[56px] text-white"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          Our{" "}
+          <span
+            className="italic"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #f95800, #ff8a00)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Partnerships
+          </span>
+        </motion.h2>
+      </div>
+
+      {/* Infinite scrolling logos */}
+      <div className="mx-auto max-w-[1240px] relative overflow-hidden">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[200px] bg-gradient-to-r from-[#000421] via-[#000421]/80 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[200px] bg-gradient-to-l from-[#000421] via-[#000421]/80 to-transparent" />
+
+        <motion.div
+          className="flex items-center justify-center"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear",
+            },
+          }}
+        >
+          {/* Render two sets for seamless loop */}
+          <LogoSet />
+          <LogoSet />
+        </motion.div>
+      </div>
+    </section>
+  );
+}

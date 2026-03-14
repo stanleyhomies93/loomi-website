@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="btn/goto/normal">
+<circle id="Ellipse" opacity="0.2" cx="21" cy="21" r="21" fill="var(--fill-0, white)"/>
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M17.1542 14.2348C17.3879 13.9565 17.8028 13.9205 18.0811 14.1542L24.7145 19.7263C25.2227 20.1532 25.2381 20.9301 24.7473 21.3768L18.1007 27.4252C17.832 27.6697 17.4159 27.6501 17.1713 27.3814C16.9268 27.1127 16.9464 26.6966 17.2151 26.452L23.6762 20.5725L17.2348 15.1617C16.9565 14.928 16.9205 14.513 17.1542 14.2348Z" fill="var(--fill-0, white)"/>
+</g>
+</svg>
