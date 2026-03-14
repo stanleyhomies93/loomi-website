@@ -1,21 +1,30 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function HeroBanner() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section className="relative h-[1080px] w-full overflow-hidden bg-[#000421]">
       {/* Background image — positioned down like Figma (top: 184px) */}
-      <div className="absolute inset-x-0 top-[184px] h-[882px]">
+      <motion.div
+        className="absolute inset-x-0 top-[184px] h-[882px]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: imageLoaded ? 1 : 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         <Image
-          src="/images/hero-banner.png"
+          src="/images/hero-banner.jpg"
           alt="Hero background"
           fill
           className="object-cover object-center"
           priority
+          onLoad={() => setImageLoaded(true)}
         />
-      </div>
+      </motion.div>
 
       {/* Top gradient: dark → transparent (rotated 180deg, tall fade) */}
       <div className="pointer-events-none absolute left-1/2 top-[111px] -translate-x-1/2 rotate-180">
