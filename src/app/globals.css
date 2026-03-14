@@ -20,3 +20,24 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Ensure mobile nav hamburger works */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-hamburger {
+    display: flex !important;
+  }
+}
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+  .mobile-hamburger {
+    display: none !important;
+  }
+  .mobile-menu {
+    display: none !important;
+  }
+}
