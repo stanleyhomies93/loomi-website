@@ -38,8 +38,8 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1240px] px-6 pb-10 pt-16">
-        <div className="flex items-start justify-between">
+      <div className="relative mx-auto max-w-[1240px] px-6 pb-10 pt-10 md:pt-16">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-0">
           {/* Logo & tagline */}
           <div>
             <Image
@@ -47,7 +47,7 @@ export default function Footer() {
               alt="LOOMI Entertainment Group"
               width={270}
               height={34}
-              className="mb-4"
+              className="mb-4 w-[200px] md:w-[270px] h-auto"
             />
             <p className="mb-8 text-[16px] leading-[1.4] text-white">
               Shaping Tomorrow&apos;s Entertainment with AI
@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <Link
                 href="#"
-                className="flex items-center gap-2 rounded-[13px] border-[0.5px] border-white/30 bg-white/10 px-4 py-3 text-[20px] text-white/70 transition-colors hover:bg-white/20"
+                className="flex items-center gap-2 rounded-[13px] border-[0.5px] border-white/30 bg-white/10 px-3 md:px-4 py-2 md:py-3 text-[16px] md:text-[20px] text-white/70 transition-colors hover:bg-white/20"
               >
                 <Image
                   src="/images/linkedin-icon.svg"
@@ -69,7 +69,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-2 rounded-[13px] border-[0.5px] border-white/30 bg-white/10 px-4 py-3 text-[20px] text-white/70 transition-colors hover:bg-white/20"
+                className="flex items-center gap-2 rounded-[13px] border-[0.5px] border-white/30 bg-white/10 px-3 md:px-4 py-2 md:py-3 text-[16px] md:text-[20px] text-white/70 transition-colors hover:bg-white/20"
               >
                 <Image
                   src="/images/mail-icon.svg"
@@ -83,7 +83,7 @@ export default function Footer() {
           </div>
 
           {/* Footer columns */}
-          <div className="flex gap-24">
+          <div className="flex flex-wrap gap-10 md:gap-24">
             <div>
               <p className="mb-4 text-[12px] leading-[1.5] text-white/40">
                 LEG Ecosystem
@@ -139,7 +139,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="mt-16 text-[12px] leading-[1.5] text-white/40">
+        <p className="mt-10 md:mt-16 text-[12px] leading-[1.5] text-white/40">
           © 2026 — © LOOMI Entertainment Group | All rights reserved
         </p>
       </div>

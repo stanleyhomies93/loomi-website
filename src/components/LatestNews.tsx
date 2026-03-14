@@ -26,10 +26,10 @@ const newsItems = [
 
 export default function LatestNews() {
   return (
-    <section id="news" className="relative bg-[#000421] py-24">
+    <section id="news" className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
         <motion.h2
-          className="mb-16 text-center text-[48px] font-semibold leading-[56px] text-white"
+          className="mb-8 md:mb-16 text-center text-[28px] md:text-[48px] font-semibold leading-[1.2] md:leading-[56px] text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -49,7 +49,7 @@ export default function LatestNews() {
           </span>
         </motion.h2>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
           {newsItems.map((item, i) => (
             <motion.article
               key={i}
@@ -72,7 +72,7 @@ export default function LatestNews() {
 
               {/* Content */}
               <div className="p-2">
-                <h3 className="mb-5 line-clamp-4 text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
+                <h3 className="mb-5 line-clamp-4 text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
                   {item.title}
                 </h3>
                 <div className="flex items-center justify-between">

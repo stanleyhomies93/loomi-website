@@ -27,11 +27,11 @@ const cardClipPath =
 
 export default function Ecosystem() {
   return (
-    <section className="relative bg-[#000421] py-24">
+    <section className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
         {/* Section heading */}
         <motion.h2
-          className="mb-6 text-center text-[48px] font-semibold leading-[56px] text-white"
+          className="mb-6 text-center text-[28px] md:text-[48px] font-semibold leading-[1.2] md:leading-[56px] text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -53,7 +53,7 @@ export default function Ecosystem() {
 
         {/* Description */}
         <motion.p
-          className="mx-auto mb-16 max-w-[943px] text-center text-[18px] leading-[1.6] text-white/70"
+          className="mx-auto mb-8 md:mb-16 max-w-[943px] text-center text-[15px] md:text-[18px] leading-[1.6] text-white/70"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -65,7 +65,7 @@ export default function Ecosystem() {
         </motion.p>
 
         {/* Cards */}
-        <div className="flex items-center justify-center -space-x-6">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 md:-space-x-6">
           {ecosystemCards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -78,7 +78,7 @@ export default function Ecosystem() {
             >
               {/* Card with skewed shape using SVG mask */}
               <div
-                className="relative h-[550px] w-[452px] overflow-hidden"
+                className="relative h-[350px] w-[280px] md:h-[550px] md:w-[452px] overflow-hidden"
                 style={{
                   WebkitMaskImage: "url(/images/card-mask.svg)",
                   WebkitMaskSize: "100% 100%",

@@ -42,8 +42,8 @@ function LogoSet() {
       {partners.map((partner) => (
         <div
           key={partner.name}
-          className="relative mx-12 flex shrink-0 items-center justify-center opacity-60"
-          style={{ width: partner.width, height: partner.height }}
+          className="relative mx-6 md:mx-12 flex shrink-0 items-center justify-center opacity-60"
+          style={{ width: partner.width * 0.7, height: partner.height * 0.7 }}
         >
           <Image
             src={partner.image}
@@ -59,10 +59,10 @@ function LogoSet() {
 
 export default function Partnerships() {
   return (
-    <section className="relative bg-[#000421] py-24">
+    <section className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
         <motion.h2
-          className="mb-16 text-center text-[48px] font-semibold leading-[56px] text-white"
+          className="mb-8 md:mb-16 text-center text-[28px] md:text-[48px] font-semibold leading-[1.2] md:leading-[56px] text-white"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -86,8 +86,8 @@ export default function Partnerships() {
       {/* Infinite scrolling logos */}
       <div className="mx-auto max-w-[1240px] relative overflow-hidden">
         {/* Fade edges */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[200px] bg-gradient-to-r from-[#000421] via-[#000421]/80 to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[200px] bg-gradient-to-l from-[#000421] via-[#000421]/80 to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[60px] md:w-[200px] bg-gradient-to-r from-[#000421] via-[#000421]/80 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[60px] md:w-[200px] bg-gradient-to-l from-[#000421] via-[#000421]/80 to-transparent" />
 
         <motion.div
           className="flex items-center justify-center"
