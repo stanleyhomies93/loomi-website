@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Studios", href: "/studios" },
   { label: "Digital", href: "/digital" },
   { label: "Ventures", href: "/ventures" },
-  { label: "News", href: "#news" },
+  { label: "News", href: "/news" },
   { label: "Contact Us", href: "#contact" },
 ];
 

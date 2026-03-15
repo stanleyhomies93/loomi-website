@@ -2,29 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const newsItems = [
-  {
-    title:
-      "Loomi Entertainment Group Partners with KT Studiogenie to Bring Premium K-Drama to Southeast Asia",
-    date: "13 March 2026",
-    image: "/images/news-1.jpg",
-  },
-  {
-    title:
-      "Loomi Partners with COL Group, Greenlights Original Microdramas as Southeast Asia Hits 23% of Global Vertical Drama Downloads",
-    date: "9 March 2026",
-    image: "/images/news-2.png",
-  },
-  {
-    title:
-      "Loomi Entertainment Group Takes the Stage at Alibaba Cloud CXO Nexus World Tour in Kuala Lumpur",
-    date: "24 February 2026",
-    image: "/images/news-3-alt.png",
-  },
-];
+import Link from "next/link";
+import { newsArticles } from "@/data/news";
 
 export default function LatestNews() {
+  // Show only the first 3 articles on the homepage
+  const displayedArticles = newsArticles.slice(0, 3);
+
   return (
     <section id="news" className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
@@ -50,52 +34,59 @@ export default function LatestNews() {
         </motion.h2>
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-          {newsItems.map((item, i) => (
-            <motion.article
-              key={i}
-              className="group flex-1 cursor-pointer overflow-hidden rounded-[12px] border border-white/40 bg-white/5 p-4"
+          {displayedArticles.map((article, i) => (
+            <motion.div
+              key={article.slug}
+              className="flex-1"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -4 }}
             >
-              {/* Image */}
-              <div className="relative mb-4 h-[240px] w-full overflow-hidden rounded-[6px]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+              <Link
+                href={`/news/${article.slug}`}
+                className="group block cursor-pointer overflow-hidden rounded-[12px] border border-white/40 bg-white/5 p-4"
+              >
+                {/* Image */}
+                <div className="relative mb-4 h-[240px] w-full overflow-hidden rounded-[6px]">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
 
-              {/* Content */}
-              <div className="p-2">
-                <h3 className="mb-5 line-clamp-4 text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
-                  {item.title}
-                </h3>
-                <div className="flex items-center justify-between">
-                  <p className="text-[14px] text-[#97989f]">{item.date}</p>
-                  <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/20 transition-colors group-hover:border-[#f95800]">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M3 8H13M13 8L8 3M13 8L8 13"
-                        stroke="white"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                {/* Content */}
+                <div className="p-2">
+                  <h3 className="mb-5 line-clamp-4 text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
+                    {article.title}
+                  </h3>
+                  <div className="flex items-center justify-between">
+                    <p className="text-[14px] text-[#97989f]">
+                      {article.date}
+                    </p>
+                    <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-white/20 transition-colors group-hover:border-[#f95800]">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M3 8H13M13 8L8 3M13 8L8 13"
+                          stroke="white"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.article>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
