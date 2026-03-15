@@ -21,7 +21,7 @@ export default function NewsPage() {
           transition={{ duration: 0.8 }}
         >
           Latest{" "}
-          <span className="text-[#f95800] italic">News</span>
+          <span className="text-[#f95800]">News</span>
         </motion.h1>
       </section>
 
@@ -53,7 +53,7 @@ export default function NewsPage() {
 
                   {/* Content */}
                   <div className="p-2">
-                    <h3 className="mb-5 line-clamp-4 text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
+                    <h3 className="mb-5 line-clamp-4 min-h-[86px] md:min-h-[106px] text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
                       {article.title}
                     </h3>
                     <div className="flex items-center justify-between">

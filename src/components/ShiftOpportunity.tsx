@@ -7,10 +7,10 @@ export default function ShiftOpportunity() {
   return (
     <section className="relative bg-[#000421] py-12 md:py-24 overflow-hidden">
       <div className="mx-auto max-w-[1240px] px-6">
-        <div className="relative flex flex-col md:flex-row items-center">
+        <div className="relative flex flex-col-reverse md:flex-row items-center">
           {/* Left text */}
           <motion.div
-            className="relative z-10 max-w-[538px] shrink-0"
+            className="relative z-10 max-w-[538px] shrink-0 text-center md:text-left"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -19,7 +19,7 @@ export default function ShiftOpportunity() {
             <h2 className="mb-4 md:mb-8 text-[28px] md:text-[48px] font-semibold leading-[1.3] md:leading-[66px] text-white">
               The{" "}
               <span
-                className="italic"
+                className=""
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, #f95800, #ff8a00)",
@@ -45,7 +45,7 @@ export default function ShiftOpportunity() {
 
           {/* Right image - overlapping closer to text */}
           <motion.div
-            className="relative mt-8 md:mt-0 md:-mr-[100px] md:ml-[-20px] h-[300px] md:h-[722px] w-full md:w-[948px] shrink-0"
+            className="relative mb-0 md:mb-0 md:mt-0 md:-mr-[100px] md:ml-[-20px] h-[400px] md:h-[722px] w-full md:w-[948px] shrink-0 -my-12 md:my-0"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}

@@ -42,7 +42,7 @@ export default function Values() {
         >
           Our{" "}
           <span
-            className="italic"
+            className=""
             style={{
               backgroundImage:
                 "linear-gradient(to right, #f95800, #ff8a00)",

@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Digital", href: "/digital" },
   { label: "Ventures", href: "/ventures" },
   { label: "News", href: "/news" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Navbar() {

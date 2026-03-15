@@ -58,7 +58,7 @@ export default function HeroBanner() {
       />
 
       {/* Content overlay */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[100px] md:pt-[157px]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[140px] md:pt-[210px]">
         {/* Loomi Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,13 +70,13 @@ export default function HeroBanner() {
             alt="LOOMI Entertainment Group"
             width={354}
             height={45}
-            className="mb-4 w-[200px] md:w-[354px] h-auto"
+            className="mb-4 w-[280px] md:w-[354px] h-auto"
           />
         </motion.div>
 
         {/* Main heading */}
         <motion.h1
-          className="max-w-[702px] text-center text-[28px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.5px] text-white px-4"
+          className="max-w-[702px] text-center text-[36px] md:text-[56px] font-semibold leading-[1.15] tracking-[-0.5px] text-white px-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,7 +84,7 @@ export default function HeroBanner() {
           Shaping Tomorrow&apos;s
           <br />
           Entertainment with{" "}
-          <span className="text-[#0d61e8]">AI</span>
+          <span className="text-[#f95800]">AI</span>
         </motion.h1>
       </div>
 

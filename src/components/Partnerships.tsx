@@ -43,7 +43,7 @@ function LogoSet() {
         <div
           key={partner.name}
           className="relative mx-6 md:mx-12 flex shrink-0 items-center justify-center opacity-60"
-          style={{ width: partner.width * 0.7, height: partner.height * 0.7 }}
+          style={{ width: partner.width, height: partner.height }}
         >
           <Image
             src={partner.image}
@@ -70,7 +70,7 @@ export default function Partnerships() {
         >
           Our{" "}
           <span
-            className="italic"
+            className=""
             style={{
               backgroundImage:
                 "linear-gradient(to right, #f95800, #ff8a00)",
@@ -83,11 +83,31 @@ export default function Partnerships() {
         </motion.h2>
       </div>
 
-      {/* Infinite scrolling logos */}
-      <div className="mx-auto max-w-[1240px] relative overflow-hidden">
+      {/* Mobile: static grid of logos */}
+      <div className="mx-auto max-w-[1240px] px-6 md:hidden">
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {partners.map((partner) => (
+            <div
+              key={partner.name}
+              className="relative flex shrink-0 items-center justify-center"
+              style={{ width: partner.width * 0.6, height: partner.height * 0.6 }}
+            >
+              <Image
+                src={partner.image}
+                alt={partner.name}
+                fill
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: infinite scrolling logos */}
+      <div className="mx-auto max-w-[1600px] relative overflow-hidden hidden md:block">
         {/* Fade edges */}
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[60px] md:w-[200px] bg-gradient-to-r from-[#000421] via-[#000421]/80 to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[60px] md:w-[200px] bg-gradient-to-l from-[#000421] via-[#000421]/80 to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-[200px] bg-gradient-to-r from-[#000421] via-[#000421]/80 to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-[200px] bg-gradient-to-l from-[#000421] via-[#000421]/80 to-transparent" />
 
         <motion.div
           className="flex items-center justify-center"
@@ -100,7 +120,6 @@ export default function Partnerships() {
             },
           }}
         >
-          {/* Render two sets for seamless loop */}
           <LogoSet />
           <LogoSet />
         </motion.div>

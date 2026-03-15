@@ -43,25 +43,25 @@ const productionTypes = [
     title: "Fully AI Dramas",
     description:
       "End-to-end AI-generated storytelling — from script and characters to visuals and scenes — enabling rapid production and limitless creative possibilities.",
-    image: "",
+    video: "/videos/studios-fully-ai.mp4",
   },
   {
     title: "AI + Live Action Dramas",
     description:
       "A hybrid production model that blends AI-generated elements with live-action filming to enhance creativity, reduce costs, and accelerate production.",
-    image: "",
+    video: "/videos/studios-ai-liveaction.mp4",
   },
   {
     title: "Commercials",
     description:
       "High-impact branded video content crafted for advertising campaigns, combining storytelling and visual creativity to help brands connect with audiences.",
-    image: "",
+    video: "/videos/studios-commercials.mp4",
   },
   {
     title: "Animations",
     description:
       "Visually engaging 2D or 3D animations created with Imaginery to bring compelling worlds and characters to life.",
-    image: "",
+    video: "/videos/studios-animations.mp4",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function StudiosPage() {
       <Navbar />
 
       {/* Hero Banner */}
-      <section className="relative h-[716px] w-full overflow-hidden bg-[#000421]">
+      <section className="relative h-[500px] md:h-[716px] w-full overflow-hidden bg-[#000421]">
         <div className="absolute inset-x-0 top-0 h-full">
           <Image
             src="/images/studios-hero.png"
@@ -91,6 +91,14 @@ export default function StudiosPage() {
           }}
         />
 
+        {/* Top gradient for mobile readability */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-[300px] md:hidden"
+          style={{
+            background: "linear-gradient(to bottom, #000421, transparent)",
+          }}
+        />
+
         {/* Bottom gradient */}
         <div
           className="pointer-events-none absolute bottom-0 left-0 right-0 h-[208px]"
@@ -100,23 +108,21 @@ export default function StudiosPage() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-end pb-24 px-6">
-          <div className="mx-auto w-full max-w-[1320px]">
+        <div className="relative z-10 flex h-full flex-col justify-start pt-24 items-center md:justify-end md:items-start md:pt-0 pb-0 md:pb-24 px-6">
+          <div className="mx-auto w-full max-w-[1320px] flex flex-col items-center md:items-start">
             <motion.div
+              className="flex flex-col items-center md:items-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="mb-4 flex items-center gap-3">
-                <Image
-                  src="/images/leg-logo.png"
-                  alt="LEG"
-                  width={23}
-                  height={29}
-                />
-                <span className="text-[18px] text-white/70">LEG</span>
+              <div className="mb-1 flex items-center gap-3">
+                <svg width="16" height="18" viewBox="0 0 20 24" fill="none">
+                  <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
+                </svg>
+                <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
               </div>
-              <h1 className="text-[64px] font-semibold leading-[1.1] text-white">
+              <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
                 Studios
               </h1>
             </motion.div>
@@ -125,39 +131,39 @@ export default function StudiosPage() {
       </section>
 
       {/* Subtitle */}
-      <section className="relative bg-[#000421] py-16">
+      <section className="relative bg-[#000421] py-8 md:py-16">
         <div className="mx-auto max-w-[1240px] px-6">
-          <motion.p
-            className="mx-auto max-w-[1181px] text-center text-[20px] italic leading-[1.6] text-white/70"
+          <motion.h2
+            className="mx-auto max-w-[1181px] text-center text-[28px] md:text-[48px] font-semibold leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
             Leveraging proprietary{" "}
-            <span className="not-italic font-semibold text-[#0d61e8]">AI</span>{" "}
+            <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>AI</span>{" "}
             to accelerate production, reduce costs, and empower creators to
             scale creativity beyond traditional limits.
-          </motion.p>
+          </motion.h2>
         </div>
 
         {/* Decorative light line */}
-        <div className="mx-auto mt-8 flex justify-center">
+        <div className="mx-auto mt-4 md:mt-8 flex justify-center">
           <Image
             src="/images/studios-lines.png"
             alt=""
             width={444}
             height={296}
-            className="opacity-60"
+            className="opacity-60 w-[250px] md:w-[444px] h-auto"
           />
         </div>
       </section>
 
       {/* IMAGINARY Section */}
-      <section className="relative bg-[#000421] py-12">
+      <section className="relative bg-[#000421] py-6 md:py-12">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
-            className="mb-6 text-center text-[72px] font-bold uppercase tracking-[8px]"
+            className="mb-6 text-center text-[36px] md:text-[72px] font-bold uppercase tracking-[4px] md:tracking-[8px]"
             style={{
               backgroundImage: "linear-gradient(to right, #f95800, #ff8a00)",
               WebkitBackgroundClip: "text",
@@ -186,10 +192,10 @@ export default function StudiosPage() {
       </section>
 
       {/* App Screenshot */}
-      <section className="relative bg-[#000421] py-12">
+      <section className="relative bg-[#000421] py-6 md:py-12">
         <div className="mx-auto max-w-[1321px] px-6">
           <motion.div
-            className="overflow-hidden rounded-[34px]"
+            className="overflow-hidden rounded-[16px] md:rounded-[34px]"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -207,56 +213,40 @@ export default function StudiosPage() {
       </section>
 
       {/* Built for Storytellers */}
-      <section className="relative bg-[#000421] py-20">
+      <section className="relative bg-[#000421] py-16 md:py-28">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
-            className="text-center text-[48px] font-semibold tracking-[-0.48px] leading-[31.938px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
+            className="text-center text-[32px] md:text-[48px] font-semibold tracking-[-0.32px] md:tracking-[-0.48px] leading-[1.3] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Built for Storytellers. Powered by AI.
+            Built for Storytellers.
+            <br />
+            Powered by AI.
           </motion.h2>
         </div>
       </section>
 
       {/* Features */}
-      <section className="relative bg-[#000421] pb-20">
+      <section className="relative bg-[#000421] pb-10 md:pb-20">
         <div className="mx-auto max-w-[1340px] px-6">
           {features.map((feature, i) => (
             <motion.div
               key={feature.label}
-              className={`mb-32 flex items-center gap-16 ${
+              className={`mb-16 md:mb-32 flex flex-col gap-6 md:gap-16 md:items-center ${
                 feature.imagePosition === "left"
-                  ? "flex-row-reverse"
-                  : "flex-row"
+                  ? "md:flex-row-reverse"
+                  : "md:flex-row"
               }`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7 }}
             >
-              {/* Text */}
-              <div className="flex-1">
-                <p
-                  className="mb-3 text-[14px] font-semibold uppercase tracking-[3px]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #f95800, #ff8a00)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  {feature.label}
-                </p>
-                <p className="whitespace-pre-line text-[28px] font-semibold leading-[1.4] text-white">
-                  {feature.text}
-                </p>
-              </div>
-
-              {/* Image */}
-              <div className="relative w-[520px] shrink-0 overflow-hidden rounded-[13px]">
+              {/* Image - shows after text on mobile */}
+              <div className="relative w-full md:w-[520px] shrink-0 overflow-hidden rounded-[13px] order-last md:order-none">
                 {feature.image ? (
                   <Image
                     src={feature.image}
@@ -266,10 +256,28 @@ export default function StudiosPage() {
                     className="h-auto w-full"
                   />
                 ) : (
-                  <div className="flex h-[350px] w-full items-center justify-center bg-white/5 text-sm text-white/30">
+                  <div className="flex h-[250px] md:h-[350px] w-full items-center justify-center bg-white/5 text-sm text-white/30">
                     {feature.label} Image
                   </div>
                 )}
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 text-center md:text-left">
+                <p
+                  className="mb-3 text-[12px] md:text-[14px] font-semibold uppercase tracking-[3px]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #f95800, #ff8a00)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  {feature.label}
+                </p>
+                <p className="whitespace-pre-line text-[20px] md:text-[28px] font-semibold leading-[1.4] text-white">
+                  {feature.text}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -277,11 +285,11 @@ export default function StudiosPage() {
       </section>
 
       {/* CTA Button */}
-      <section className="relative bg-[#000421] pb-24">
+      <section className="relative bg-[#000421] pb-12 md:pb-24">
         <div className="flex justify-center">
           <motion.a
             href="#"
-            className="inline-flex items-center gap-3 rounded-full px-10 py-5 text-[20px] font-semibold text-white transition-transform hover:scale-105"
+            className="inline-flex items-center gap-3 rounded-full px-8 py-4 md:px-10 md:py-5 text-[16px] md:text-[20px] font-semibold text-white transition-transform hover:scale-105"
             style={{
               background: "linear-gradient(135deg, #f95800, #ff8a00)",
             }}
@@ -305,10 +313,10 @@ export default function StudiosPage() {
       </section>
 
       {/* The Only Limit Is Your Imagination */}
-      <section className="relative bg-[#000421] py-24">
+      <section className="relative bg-[#000421] py-12 md:py-24">
         <div className="mx-auto max-w-[1358px] px-6">
           <motion.h2
-            className="mb-16 text-center text-[48px] font-semibold leading-[56px] text-white"
+            className="mb-8 md:mb-16 text-center text-[28px] md:text-[48px] font-semibold leading-[1.2] md:leading-[56px] text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -316,7 +324,7 @@ export default function StudiosPage() {
           >
             The Only Limit Is Your{" "}
             <span
-              className="italic"
+              className=""
               style={{
                 backgroundImage:
                   "linear-gradient(to right, #f95800, #ff8a00)",
@@ -329,7 +337,7 @@ export default function StudiosPage() {
           </motion.h2>
 
           {/* 2x2 Grid */}
-          <div className="grid grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {productionTypes.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -339,21 +347,22 @@ export default function StudiosPage() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
-                <div className="relative h-[375px] w-full overflow-hidden rounded-t-[13px] bg-[#0a0e2a]">
-                  {item.image && (
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  )}
+                <div className="relative h-[220px] md:h-[375px] w-full overflow-hidden rounded-t-[13px] bg-[#0a0e2a]">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover"
+                  >
+                    <source src={item.video} type="video/mp4" />
+                  </video>
                 </div>
-                <div className="p-8">
-                  <h3 className="mb-3 text-[28px] font-semibold text-white">
+                <div className="p-5 md:p-8">
+                  <h3 className="mb-2 md:mb-3 text-[20px] md:text-[28px] font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="text-[16px] leading-[1.6] text-white/60">
+                  <p className="text-[14px] md:text-[16px] leading-[1.6] text-white/60">
                     {item.description}
                   </p>
                 </div>

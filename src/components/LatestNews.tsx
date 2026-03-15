@@ -21,7 +21,7 @@ export default function LatestNews() {
         >
           Latest{" "}
           <span
-            className="italic"
+            className=""
             style={{
               backgroundImage:
                 "linear-gradient(to right, #f95800, #ff8a00)",
@@ -60,7 +60,7 @@ export default function LatestNews() {
 
                 {/* Content */}
                 <div className="p-2">
-                  <h3 className="mb-5 line-clamp-4 text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
+                  <h3 className="mb-5 line-clamp-4 min-h-[86px] md:min-h-[106px] text-[18px] md:text-[22px] font-semibold leading-[1.2] tracking-[-0.22px] text-white">
                     {article.title}
                   </h3>
                   <div className="flex items-center justify-between">
