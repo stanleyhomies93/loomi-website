@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ShiftOpportunity() {
   return (
-    <section className="relative bg-[#000421] py-12 md:py-24 overflow-hidden">
+    <section className="relative bg-[#000421] py-4 md:py-2 overflow-hidden">
       <div className="mx-auto max-w-[1240px] px-6">
         <div className="relative flex flex-col-reverse md:flex-row items-center">
           {/* Left text */}
