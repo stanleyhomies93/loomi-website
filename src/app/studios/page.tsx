@@ -131,7 +131,7 @@ export default function StudiosPage() {
       </section>
 
       {/* Subtitle */}
-      <section className="relative bg-[#000421] py-8 md:py-16">
+      <section className="relative bg-[#000421] py-8 md:py-8">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
             className="mx-auto max-w-[1181px] text-center text-[28px] md:text-[48px] font-semibold leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
@@ -148,19 +148,19 @@ export default function StudiosPage() {
         </div>
 
         {/* Decorative light line */}
-        <div className="mx-auto mt-4 md:mt-8 flex justify-center">
+        <div className="mx-auto mt-2 md:mt-2 flex justify-center">
           <Image
             src="/images/studios-lines.png"
             alt=""
             width={444}
             height={296}
-            className="opacity-60 w-[250px] md:w-[444px] h-auto"
+            className="opacity-60 w-[250px] md:w-[300px] h-auto"
           />
         </div>
       </section>
 
       {/* IMAGINARY Section */}
-      <section className="relative bg-[#000421] py-6 md:py-12">
+      <section className="relative bg-[#000421] py-4 md:py-4">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
             className="mb-6 text-center text-[36px] md:text-[72px] font-bold uppercase tracking-[4px] md:tracking-[8px]"
