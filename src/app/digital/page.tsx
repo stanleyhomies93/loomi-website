@@ -91,16 +91,6 @@ export default function DigitalPage() {
           </motion.h2>
         </div>
 
-        {/* Decorative light line */}
-        <div className="mx-auto mt-4 md:mt-8 flex justify-center">
-          <Image
-            src="/images/studios-lines.png"
-            alt=""
-            width={444}
-            height={296}
-            className="opacity-60 w-[250px] md:w-[444px] h-auto"
-          />
-        </div>
       </section>
 
       {/* Distribution via LOOMI AI Short Drama Platform */}
