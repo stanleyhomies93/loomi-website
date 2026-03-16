@@ -104,24 +104,13 @@ export default function Ecosystem() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%]" />
-                  <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
-                    <div>
-                      <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
-                        {card.label}
-                      </p>
-                      <p className="text-[32px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
-                        {card.title}
-                      </p>
-                    </div>
-                    <svg
-                      width="24"
-                      height="28"
-                      viewBox="0 0 20 24"
-                      fill="none"
-                      className="mb-1 shrink-0"
-                    >
-                      <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                    </svg>
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
+                      {card.label}
+                    </p>
+                    <p className="text-[32px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
+                      {card.title}
+                    </p>
                   </div>
                 </div>
                 <div
