@@ -80,46 +80,63 @@ export default function Ecosystem() {
               className="group relative shrink-0 snap-center w-[85vw] max-w-[340px]"
             >
               <motion.div
-                className="relative h-[480px] overflow-hidden rounded-[20px]"
+                className="relative"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/30 via-[15%] to-transparent to-[50%]" />
-                {/* Glow border */}
                 <div
-                  className="pointer-events-none absolute inset-0 rounded-[20px]"
+                  className="relative h-[480px] w-[300px] overflow-hidden"
                   style={{
+                    WebkitMaskImage: "url(/images/card-mask.svg)",
+                    WebkitMaskSize: "100% 100%",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskImage: "url(/images/card-mask.svg)",
+                    maskSize: "100% 100%",
+                    maskRepeat: "no-repeat",
+                  }}
+                >
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%]" />
+                  <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
+                    <div>
+                      <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
+                        {card.label}
+                      </p>
+                      <p className="text-[32px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
+                        {card.title}
+                      </p>
+                    </div>
+                    <svg
+                      width="24"
+                      height="28"
+                      viewBox="0 0 20 24"
+                      fill="none"
+                      className="mb-1 shrink-0"
+                    >
+                      <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    WebkitMaskImage: "url(/images/card-mask.svg)",
+                    WebkitMaskSize: "100% 100%",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskImage: "url(/images/card-mask.svg)",
+                    maskSize: "100% 100%",
+                    maskRepeat: "no-repeat",
                     boxShadow:
                       "inset 0px -34px 26.7px 0px rgba(102,148,255,0.5), inset 0px -8px 16.7px 0px rgba(255,255,255,0.64), inset 0px -30px 12px 0px rgba(35,101,255,0.15), inset 0px -1px 10.8px 0px rgba(102,148,255,0.2)",
                   }}
                 />
-                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-                  <div>
-                    <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
-                      {card.label}
-                    </p>
-                    <p className="text-[36px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
-                      {card.title}
-                    </p>
-                  </div>
-                  <svg
-                    width="28"
-                    height="32"
-                    viewBox="0 0 20 24"
-                    fill="none"
-                    className="mb-1 shrink-0"
-                  >
-                    <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                  </svg>
-                </div>
               </motion.div>
             </Link>
           ))}
