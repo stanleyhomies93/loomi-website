@@ -37,8 +37,8 @@ export default function NewsArticlePage() {
       <Navbar />
 
       {/* Article Header */}
-      <section className="pt-[120px] md:pt-[165px] px-6">
-        <div className="mx-auto max-w-[1309px]">
+      <section className="pt-[120px] md:pt-[165px] px-6 md:px-16">
+        <div className="mx-auto max-w-[900px]">
           <motion.div
             className="flex flex-col gap-[18px]"
             initial={{ opacity: 0, y: 20 }}
@@ -56,9 +56,9 @@ export default function NewsArticlePage() {
       </section>
 
       {/* Article Body */}
-      <section className="pt-8 md:pt-12 pb-24 px-6">
+      <section className="pt-8 md:pt-12 pb-24 px-6 md:px-16">
         <motion.div
-          className="mx-auto max-w-[1309px]"
+          className="mx-auto max-w-[900px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -89,7 +89,7 @@ export default function NewsArticlePage() {
         </motion.div>
 
         {/* Back to News */}
-        <div className="mx-auto max-w-[1309px] mt-16">
+        <div className="mx-auto max-w-[900px] mt-16">
           <Link
             href="/news"
             className="inline-flex items-center gap-2 text-[#f95800] text-[18px] font-semibold hover:underline"

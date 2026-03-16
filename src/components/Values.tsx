@@ -1,35 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const values = [
-  {
-    emoji: "🚀",
-    title: "Innovation",
-    description:
-      "We push the boundaries of storytelling with AI-powered tools, redefining how content is created, distributed, and experienced.",
-  },
-  {
-    emoji: "🧪",
-    title: "Creator Empowerment",
-    description:
-      "We support storytellers with resources, technology, and guidance, helping them scale their vision and reach wider audiences.",
-  },
-  {
-    emoji: "🤝",
-    title: "Collaboration",
-    description:
-      "We build strong partnerships across the ecosystem — with creators, platforms, and audiences — to amplify storytelling and create shared success.",
-  },
-  {
-    emoji: "🌍",
-    title: "Impactful Engagement",
-    description:
-      "We focus on building meaningful connections between creators and audiences fostering communities and unlocking new monetization opportunities.",
-  },
-];
+const emojis = ["🚀", "🧪", "🤝", "🌍"];
 
 export default function Values() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
@@ -40,7 +18,7 @@ export default function Values() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Our{" "}
+          {t.home.values.our}{" "}
           <span
             className=""
             style={{
@@ -50,14 +28,14 @@ export default function Values() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Values
+            {t.home.values.highlight}
           </span>
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {values.map((value, i) => (
+          {t.home.values.items.map((value, i) => (
             <motion.div
-              key={value.title}
+              key={i}
               className="relative overflow-hidden rounded-[16px] border border-white/10 p-6 md:p-10"
               style={{
                 background:
@@ -72,7 +50,7 @@ export default function Values() {
               <div className="absolute inset-0 rounded-[16px] border border-white/5" />
 
               <div className="flex items-start gap-4">
-                <span className="text-[36px]">{value.emoji}</span>
+                <span className="text-[36px]">{emojis[i]}</span>
                 <div>
                   <h3 className="mb-3 text-[20px] md:text-[24px] font-semibold text-white">
                     {value.title}

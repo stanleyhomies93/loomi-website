@@ -4,68 +4,37 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const features = [
-  {
-    label: "Prompt Optimization Engine",
-    text: "Type rough ideas, get cinematic results.\nNo technical skills needed.",
-    image: "/images/studios-feat-prompt1.png",
-    imagePosition: "left" as const,
-  },
-  {
-    label: "Style Lock",
-    text: "Set your visual style once — every\nscene stays consistent automatically.",
-    image: "/images/studios-feat-style1.png",
-    imagePosition: "right" as const,
-  },
-  {
-    label: "Character Memory",
-    text: "Your characters look the same in\nevery single scene. No more\nrandom face changes.",
-    image: "/images/studios-feat-character1.png",
-    imagePosition: "left" as const,
-  },
-  {
-    label: "Narrative-Aware Generation",
-    text: "Imaginary is designed for drama\ncreation, streamlining the entire\nstorytelling workflow from start\nto finish within a single project.",
-    image: "/images/studios-feat-narrative.png",
-    imagePosition: "right" as const,
-  },
-  {
-    label: "World Builder",
-    text: "One sentence becomes a full story\nuniverse — characters, scenes, and all.",
-    image: "/images/studios-feat-worldbuilder.png",
-    imagePosition: "left" as const,
-  },
+const featureImages = [
+  { image: "/images/studios-feat-prompt1.png", imagePosition: "left" as const },
+  { image: "/images/studios-feat-style1.png", imagePosition: "right" as const },
+  { image: "/images/studios-feat-character1.png", imagePosition: "left" as const },
+  { image: "/images/studios-feat-narrative.png", imagePosition: "right" as const },
+  { image: "/images/studios-feat-worldbuilder.png", imagePosition: "left" as const },
 ];
 
-const productionTypes = [
-  {
-    title: "Fully AI Dramas",
-    description:
-      "End-to-end AI-generated storytelling — from script and characters to visuals and scenes — enabling rapid production and limitless creative possibilities.",
-    video: "/videos/studios-fully-ai.mp4",
-  },
-  {
-    title: "AI + Live Action Dramas",
-    description:
-      "A hybrid production model that blends AI-generated elements with live-action filming to enhance creativity, reduce costs, and accelerate production.",
-    video: "/videos/studios-ai-liveaction.mp4",
-  },
-  {
-    title: "Commercials",
-    description:
-      "High-impact branded video content crafted for advertising campaigns, combining storytelling and visual creativity to help brands connect with audiences.",
-    video: "/videos/studios-commercials.mp4",
-  },
-  {
-    title: "Animations",
-    description:
-      "Visually engaging 2D or 3D animations created with Imaginery to bring compelling worlds and characters to life.",
-    video: "/videos/studios-animations.mp4",
-  },
+const productionVideos = [
+  "/videos/studios-fully-ai.mp4",
+  "/videos/studios-ai-liveaction.mp4",
+  "/videos/studios-commercials.mp4",
+  "/videos/studios-animations.mp4",
 ];
 
 export default function StudiosPage() {
+  const { t } = useLanguage();
+
+  const features = t.studios.features.map((f, i) => ({
+    ...f,
+    image: featureImages[i].image,
+    imagePosition: featureImages[i].imagePosition,
+  }));
+
+  const productionTypes = t.studios.productionTypes.map((p, i) => ({
+    ...p,
+    video: productionVideos[i],
+  }));
+
   return (
     <main className="min-h-screen bg-[#000421]">
       <Navbar />
@@ -118,10 +87,10 @@ export default function StudiosPage() {
             >
               <div className="mb-1 flex items-center gap-3">
                 <Image src="/images/play-icon.png" alt="" width={16} height={18} className="w-[16px] h-[18px] object-contain" />
-                <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
+                <span className="text-[18px] font-semibold text-[#f95800]">{t.studios.label}</span>
               </div>
               <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
-                Studios
+                {t.studios.title}
               </h1>
             </motion.div>
           </div>
@@ -138,10 +107,9 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Leveraging proprietary{" "}
-            <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>AI</span>{" "}
-            to accelerate production, reduce costs, and empower creators to
-            scale creativity beyond traditional limits.
+            {t.studios.subtitle.split("{ai}")[0]}
+            <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>AI</span>
+            {t.studios.subtitle.split("{ai}")[1]}
           </motion.h2>
         </div>
 
@@ -172,7 +140,7 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            IMAGINARY
+            {t.studios.imaginary.heading}
           </motion.h2>
           <motion.p
             className="mx-auto max-w-[1166px] text-center text-[16px] leading-[1.6] text-white/70"
@@ -181,10 +149,7 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Imaginary is a cinematic AI engine that transforms a single story
-            prompt into a fully realized universe. We streamline drama
-            production, IP creation, and world-building, enabling storytellers to
-            effortlessly bring their creative visions to life.
+            {t.studios.imaginary.description}
           </motion.p>
         </div>
       </section>
@@ -220,9 +185,9 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Built for Storytellers.
+            {t.studios.builtFor.line1}
             <br />
-            Powered by AI.
+            {t.studios.builtFor.line2}
           </motion.h2>
         </div>
       </section>
@@ -230,7 +195,7 @@ export default function StudiosPage() {
       {/* Features */}
       <section className="relative bg-[#000421] pb-10 md:pb-20">
         <div className="mx-auto max-w-[1340px] px-6">
-          {features.map((feature, i) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.label}
               className={`mb-16 md:mb-32 flex flex-col gap-6 md:gap-16 md:items-center ${
@@ -255,7 +220,7 @@ export default function StudiosPage() {
                   />
                 ) : (
                   <div className="flex h-[250px] md:h-[350px] w-full items-center justify-center bg-white/5 text-sm text-white/30">
-                    {feature.label} Image
+                    {feature.label}
                   </div>
                 )}
               </div>
@@ -298,7 +263,7 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Experience Imaginary
+            {t.studios.experienceImaginary}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path
                 d="M5 15L15 5M15 5H5M15 5V15"
@@ -322,7 +287,7 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            The Only Limit Is Your{" "}
+            {t.studios.imagination.title}{" "}
             <span
               className=""
               style={{
@@ -332,7 +297,7 @@ export default function StudiosPage() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Imagination
+              {t.studios.imagination.highlight}
             </span>
           </motion.h2>
 
@@ -340,7 +305,7 @@ export default function StudiosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {productionTypes.map((item, i) => (
               <motion.div
-                key={item.title}
+                key={i}
                 className="group overflow-hidden rounded-[16px] bg-white/5"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

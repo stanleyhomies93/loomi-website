@@ -4,25 +4,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const ventures = [
-  {
-    title: "Capital Investment",
-    description:
-      "LEG Ventures invests in professional short dramas while partners leverage our ecosystem, creating powerful synergies that benefit all stakeholders.",
-    image: "/images/ventures-capital.jpg",
-    imagePosition: "left" as const,
-  },
-  {
-    title: "Creator Incubator Program",
-    description:
-      "We collaborate regionally to incubate emerging creators with mentorship, resources, and guidance to scale storytelling across Southeast Asia.",
-    image: "/images/ventures-creator.jpg",
-    imagePosition: "right" as const,
-  },
+const ventureImages = [
+  { image: "/images/ventures-capital.jpg", imagePosition: "left" as const },
+  { image: "/images/ventures-creator.jpg", imagePosition: "right" as const },
 ];
 
 export default function VenturesPage() {
+  const { t } = useLanguage();
+
+  const ventures = t.ventures.cards.map((card, i) => ({
+    ...card,
+    image: ventureImages[i].image,
+    imagePosition: ventureImages[i].imagePosition,
+  }));
+
   return (
     <main className="min-h-screen bg-[#000421]">
       <Navbar />
@@ -75,10 +72,10 @@ export default function VenturesPage() {
             >
               <div className="mb-1 flex items-center gap-3">
                 <Image src="/images/play-icon.png" alt="" width={16} height={18} className="w-[16px] h-[18px] object-contain" />
-                <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
+                <span className="text-[18px] font-semibold text-[#f95800]">{t.ventures.label}</span>
               </div>
               <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
-                Ventures
+                {t.ventures.title}
               </h1>
             </motion.div>
           </div>
@@ -95,16 +92,14 @@ export default function VenturesPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Investing in the industry while partners leverage the{" "}
+            {t.ventures.subtitle.part1}{" "}
             <span
               className="text-[#f95800]"
               style={{ WebkitTextFillColor: "#f95800" }}
             >
-              LEG ecosystem
+              {t.ventures.subtitle.highlight}
             </span>{" "}
-            to create powerful synergies that benefit
-            <br className="hidden md:block" />
-            {" "}all stakeholders
+            {t.ventures.subtitle.part2}
           </motion.h2>
         </div>
 
@@ -125,7 +120,7 @@ export default function VenturesPage() {
         <div className="mx-auto max-w-[1240px] px-6 flex flex-col gap-8 md:gap-12">
           {ventures.map((item, i) => (
             <motion.div
-              key={item.title}
+              key={i}
               className="flex flex-col md:flex-row md:h-[497px] overflow-hidden rounded-[16px] border border-white/10"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +142,7 @@ export default function VenturesPage() {
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center text-sm text-white/30">
-                    {item.title} Image
+                    {item.title}
                   </div>
                 )}
               </div>

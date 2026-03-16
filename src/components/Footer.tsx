@@ -3,24 +3,27 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const ecosystemLinks = [
-  { label: "Loomi Mobile App", href: "https://app.loomi.asia/" },
-  { label: "Imaginary", href: "https://preview.imaginary-ai.com/" },
-];
-
-const companyLinks = [
-  { label: "Studio", href: "/studios" },
-  { label: "Digital", href: "/digital" },
-  { label: "Ventures", href: "/ventures" },
-];
-
-const legalLinks = [
-  { label: "Term of Use", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const ecosystemLinks = [
+    { label: t.footer.loomiApp, href: "https://app.loomi.asia/" },
+    { label: t.footer.imaginary, href: "https://preview.imaginary-ai.com/" },
+  ];
+
+  const companyLinks = [
+    { label: t.footer.studio, href: "/studios" },
+    { label: t.footer.digital, href: "/digital" },
+    { label: t.footer.ventures, href: "/ventures" },
+  ];
+
+  const legalLinks = [
+    { label: t.footer.termOfUse, href: "/terms" },
+    { label: t.footer.privacyPolicy, href: "/privacy" },
+  ];
+
   return (
     <motion.footer
       className="relative overflow-hidden border-t border-white/20 bg-[#000421]"
@@ -51,7 +54,7 @@ export default function Footer() {
               className="mb-4 w-[320px] h-auto"
             />
             <p className="mb-8 text-[16px] leading-[1.4] text-white">
-              Shaping Tomorrow&apos;s Entertainment with AI
+              {t.footer.tagline}
             </p>
 
             {/* Social buttons */}
@@ -68,7 +71,7 @@ export default function Footer() {
                   width={22}
                   height={22}
                 />
-                LinkedIn
+                {t.footer.linkedin}
               </Link>
               <Link
                 href="/contact"
@@ -80,7 +83,7 @@ export default function Footer() {
                   width={22}
                   height={22}
                 />
-                Contact Us
+                {t.footer.contactUs}
               </Link>
             </div>
           </div>
@@ -89,11 +92,11 @@ export default function Footer() {
           <div className="flex gap-24">
             <div>
               <p className="mb-4 text-[12px] leading-[1.5] text-white/40">
-                LEG Ecosystem
+                {t.footer.ecosystemLabel}
               </p>
               <ul className="space-y-[17px]">
                 {ecosystemLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-[16px] leading-[1.4] text-white transition-colors hover:text-white/80"
@@ -106,11 +109,11 @@ export default function Footer() {
             </div>
             <div>
               <p className="mb-4 text-[12px] leading-[1.5] text-white/40">
-                Company
+                {t.footer.companyLabel}
               </p>
               <ul className="space-y-[17px]">
                 {companyLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-[16px] leading-[1.4] text-white transition-colors hover:text-white/80"
@@ -123,11 +126,11 @@ export default function Footer() {
             </div>
             <div>
               <p className="mb-4 text-[12px] leading-[1.5] text-white/40">
-                Legal
+                {t.footer.legalLabel}
               </p>
               <ul className="space-y-[17px]">
                 {legalLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.href}>
                     <Link
                       href={link.href}
                       className="text-[16px] leading-[1.4] text-white transition-colors hover:text-white/80"
@@ -152,17 +155,17 @@ export default function Footer() {
             className="mb-4 w-[320px] h-auto"
           />
           <p className="mb-8 text-[16px] leading-[1.4] text-white">
-            Shaping Tomorrow&apos;s Entertainment with AI
+            {t.footer.tagline}
           </p>
 
           {/* LEG Ecosystem - inline */}
           <div className="mb-6">
             <p className="mb-3 text-[12px] leading-[1.5] text-white/40">
-              LEG Ecosystem
+              {t.footer.ecosystemLabel}
             </p>
             <div className="flex items-center gap-3">
               {ecosystemLinks.map((link, i) => (
-                <span key={link.label} className="flex items-center gap-3">
+                <span key={link.href} className="flex items-center gap-3">
                   {i > 0 && <span className="text-white/30">|</span>}
                   <Link
                     href={link.href}
@@ -178,11 +181,11 @@ export default function Footer() {
           {/* Company - inline */}
           <div className="mb-6">
             <p className="mb-3 text-[12px] leading-[1.5] text-white/40">
-              Company
+              {t.footer.companyLabel}
             </p>
             <div className="flex items-center gap-3">
               {companyLinks.map((link, i) => (
-                <span key={link.label} className="flex items-center gap-3">
+                <span key={link.href} className="flex items-center gap-3">
                   {i > 0 && <span className="text-white/30">|</span>}
                   <Link
                     href={link.href}
@@ -199,11 +202,11 @@ export default function Footer() {
           <div className="flex items-end justify-between mb-8">
             <div>
               <p className="mb-3 text-[12px] leading-[1.5] text-white/40">
-                Legal
+                {t.footer.legalLabel}
               </p>
               <div className="flex items-center gap-3">
                 {legalLinks.map((link, i) => (
-                  <span key={link.label} className="flex items-center gap-3">
+                  <span key={link.href} className="flex items-center gap-3">
                     {i > 0 && <span className="text-white/30">|</span>}
                     <Link
                       href={link.href}
@@ -250,13 +253,13 @@ export default function Footer() {
 
           {/* Copyright */}
           <p className="text-[12px] leading-[1.5] text-white/40">
-            © LOOMI Entertainment Group | All rights reserved
+            {t.footer.copyrightMobile}
           </p>
         </div>
 
         {/* Desktop Copyright */}
         <p className="hidden md:block mt-16 text-[12px] leading-[1.5] text-white/40">
-          © 2026 — © LOOMI Entertainment Group | All rights reserved
+          {t.footer.copyrightDesktop}
         </p>
       </div>
     </motion.footer>

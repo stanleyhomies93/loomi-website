@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const partners = [
   {
@@ -58,6 +59,8 @@ function LogoSet() {
 }
 
 export default function Partnerships() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
@@ -68,7 +71,7 @@ export default function Partnerships() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Our{" "}
+          {t.home.partnerships.our}{" "}
           <span
             className=""
             style={{
@@ -78,7 +81,7 @@ export default function Partnerships() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Partnerships
+            {t.home.partnerships.highlight}
           </span>
         </motion.h2>
       </div>

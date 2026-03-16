@@ -3,36 +3,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const ecosystemCards = [
-  {
-    label: "LEG",
-    title: "Ventures",
-    image: "/images/ecosystem-venture-new.png",
-    description: "We support storytellers with resources, technology, and guidance, helping them scale their vision and reach wider audiences.",
-    href: "/ventures",
-  },
-  {
-    label: "LEG",
-    title: "Studios",
-    image: "/images/ecosystem-studios-new.png",
-    description: "We push the boundaries of storytelling with AI-powered tools, redefining how content is created, distributed, and experienced.",
-    href: "/studios",
-  },
-  {
-    label: "LEG",
-    title: "Digital",
-    image: "/images/ecosystem-digital-new.png",
-    description: "We build strong partnerships across the ecosystem — with creators, platforms, and audiences — to amplify storytelling and create shared success.",
-    href: "/digital",
-  },
+const cardImages = [
+  { image: "/images/ecosystem-venture-new.png", href: "/ventures" },
+  { image: "/images/ecosystem-studios-new.png", href: "/studios" },
+  { image: "/images/ecosystem-digital-new.png", href: "/digital" },
 ];
 
-// SVG clip path matching the Figma parallelogram mask (viewBox 0 0 452.468 549.289)
-const cardClipPath =
-  "polygon(26.3% 0%, 100% 0%, 91.2% 0.27%, 99.6% 8.45%, 82% 93.9%, 79.7% 97.5%, 73.7% 99.7%, 8.85% 99.7%, 3.54% 99.7%, 0% 95.85%, 0.45% 91.6%, 17.95% 6.12%, 20.2% 2.74%, 26.3% 0.27%)";
-
 export default function Ecosystem() {
+  const { t } = useLanguage();
+
+  const ecosystemCards = t.home.ecosystem.cards.map((card, i) => ({
+    label: "LEG",
+    title: card.title,
+    description: card.description,
+    image: cardImages[i].image,
+    href: cardImages[i].href,
+  }));
+
   return (
     <section className="relative bg-[#000421] py-12 md:py-24">
       <div className="mx-auto max-w-[1240px] px-6">
@@ -44,7 +33,7 @@ export default function Ecosystem() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Our{" "}
+          {t.home.ecosystem.our}{" "}
           <span
             className=""
             style={{
@@ -54,7 +43,7 @@ export default function Ecosystem() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Ecosystem
+            {t.home.ecosystem.highlight}
           </span>
         </motion.h2>
 
@@ -66,16 +55,14 @@ export default function Ecosystem() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Through an AI-powered ecosystem that seamlessly enhances every layer
-          of the microdrama industry value chain, LEG is shaping how
-          entertainment is built, delivered, and scaled.
+          {t.home.ecosystem.description}
         </motion.p>
 
         {/* Mobile Cards - horizontal scroll */}
         <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-2 px-4 -mx-4 scrollbar-hide">
-          {ecosystemCards.map((card, i) => (
+          {ecosystemCards.map((card) => (
             <Link
-              key={card.title}
+              key={card.href}
               href={card.href}
               className="group relative shrink-0 snap-center w-[72vw] max-w-[300px]"
             >
@@ -129,7 +116,7 @@ export default function Ecosystem() {
         <div className="hidden md:flex items-center justify-center gap-0 -space-x-6">
           {ecosystemCards.map((card, i) => (
             <motion.div
-              key={card.title}
+              key={card.href}
               className="group relative cursor-pointer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +171,7 @@ export default function Ecosystem() {
                         className="inline-flex items-center justify-center rounded-[6px] px-10 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-white"
                         style={{ background: "linear-gradient(135deg, #f95800, #ff8a00)" }}
                       >
-                        Learn More
+                        {t.home.ecosystem.learnMore}
                       </Link>
                     </div>
                   </div>

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function DigitalPage() {
+  const { t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-[#000421]">
       <Navbar />
@@ -58,10 +61,10 @@ export default function DigitalPage() {
             >
               <div className="mb-1 flex items-center gap-3">
                 <Image src="/images/play-icon.png" alt="" width={16} height={18} className="w-[16px] h-[18px] object-contain" />
-                <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
+                <span className="text-[18px] font-semibold text-[#f95800]">{t.digital.label}</span>
               </div>
               <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
-                Digital
+                {t.digital.title}
               </h1>
             </motion.div>
           </div>
@@ -78,14 +81,14 @@ export default function DigitalPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Shaping the next generation of
+            {t.digital.subtitle.line1}
             <br className="md:hidden" />
             {" "}
             <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>
-              drama distribution
+              {t.digital.subtitle.highlight}
             </span>
             <br />
-            in Southeast Asia and beyond
+            {t.digital.subtitle.line2}
           </motion.h2>
         </div>
 
@@ -123,15 +126,13 @@ export default function DigitalPage() {
               />
             </div>
             <h3 className="mb-2 text-[28px] font-semibold leading-normal text-white">
-              Distribution via
+              {t.digital.loomi.distributionVia}
             </h3>
             <p className="mb-4 text-[24px] font-semibold text-[#f95800]">
-              Loomi AI Short Drama Platform
+              {t.digital.loomi.platform}
             </p>
             <p className="mb-6 text-[16px] leading-[1.4] text-white">
-              LOOMI uses AI and data-driven insights to curate and translate
-              content tailored to Southeast Asia&apos;s diverse audiences,
-              enabling creative engagement at scale across all touchpoints.
+              {t.digital.loomi.description}
             </p>
             <div className="flex gap-3 justify-center">
               <a href="https://apps.apple.com/sg/app/loomi-short-dramas/id6754369030" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
@@ -200,15 +201,13 @@ export default function DigitalPage() {
                 />
               </div>
               <h3 className="mb-2 text-[48px] font-semibold leading-normal text-white">
-                Distribution via
+                {t.digital.loomi.distributionVia}
               </h3>
               <p className="mb-6 text-[48px] font-semibold text-[#f95800]">
-                Loomi AI Short Drama Platform
+                {t.digital.loomi.platform}
               </p>
               <p className="mb-8 max-w-[658px] text-[22px] leading-[1.2] text-white">
-                LOOMI uses AI and data-driven insights to curate and translate
-                content tailored to Southeast Asia&apos;s diverse audiences,
-                enabling creative engagement at scale across all touchpoints.
+                {t.digital.loomi.description}
               </p>
               <div className="flex gap-4">
                 <a href="https://apps.apple.com/sg/app/loomi-short-dramas/id6754369030" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
@@ -248,16 +247,13 @@ export default function DigitalPage() {
             transition={{ duration: 0.7 }}
           >
             <h3 className="mb-2 text-[28px] font-semibold leading-normal text-white">
-              Distribution via
+              {t.digital.tiktok.distributionVia}
             </h3>
             <p className="mb-4 text-[24px] font-semibold text-[#f95800]">
-              Tiktok Platform
+              {t.digital.tiktok.platform}
             </p>
             <p className="mb-6 text-[16px] leading-[1.4] text-white">
-              Our platform distributes proprietary dramas on TikTok, reaching
-              millions across the region through a Pay-Per-View model that
-              generates revenue for creators and brands while maximizing
-              engagement and delivering performance-based results.
+              {t.digital.tiktok.description}
             </p>
             <div className="flex justify-center">
               <a
@@ -274,7 +270,7 @@ export default function DigitalPage() {
                   className="rounded-full w-[32px] h-auto"
                 />
                 <span className="text-[16px] font-semibold text-black">
-                  Follow us on TikTok
+                  {t.digital.tiktok.followUs}
                 </span>
               </a>
             </div>
@@ -317,16 +313,13 @@ export default function DigitalPage() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <h3 className="mb-2 text-[48px] font-semibold leading-normal text-white">
-                Distribution via
+                {t.digital.tiktok.distributionVia}
               </h3>
               <p className="mb-6 text-[48px] font-semibold text-[#f95800]">
-                Tiktok Platform
+                {t.digital.tiktok.platform}
               </p>
               <p className="mb-8 max-w-[658px] text-[22px] leading-[1.2] text-white">
-                Our platform distributes proprietary dramas on TikTok, reaching
-                millions across the region through a Pay-Per-View model that
-                generates revenue for creators and brands while maximizing
-                engagement and delivering performance-based results.
+                {t.digital.tiktok.description}
               </p>
               <a
                 href="https://www.tiktok.com/@loomi_entertainment"
@@ -342,7 +335,7 @@ export default function DigitalPage() {
                   className="rounded-full"
                 />
                 <span className="text-[19px] font-semibold text-black">
-                  Follow us on TikTok
+                  {t.digital.tiktok.followUs}
                 </span>
               </a>
             </motion.div>
@@ -362,17 +355,13 @@ export default function DigitalPage() {
             transition={{ duration: 0.7 }}
           >
             <p className="mb-2 text-[28px] font-semibold leading-[1.2] text-white">
-              Distribution via
+              {t.digital.global.distributionVia}
             </p>
             <p className="mb-4 text-[22px] font-semibold text-[#f95800]">
-              Global Distribution Networks
+              {t.digital.global.platform}
             </p>
             <p className="text-[16px] font-normal leading-[1.4] text-white">
-              As microdramas expand globally, LEG partners with various
-              distribution platforms and app owners to build strategic
-              alliances that connect stories with millions of potential
-              viewers across Southeast Asia - accelerating discovery, boosting
-              engagement, and maximizing reach for every production.
+              {t.digital.global.description}
             </p>
           </motion.div>
         </div>
@@ -412,20 +401,14 @@ export default function DigitalPage() {
               transition={{ duration: 0.7 }}
             >
               <p className="mb-6 text-[48px] font-semibold leading-normal">
-                <span className="text-white">Distribution via</span>
+                <span className="text-white">{t.digital.global.distributionVia}</span>
                 <br />
                 <span className="text-[#f95800]">
-                  Global Distribution
-                  <br />
-                  Networks
+                  {t.digital.global.platform}
                 </span>
               </p>
               <p className="max-w-[566px] text-[22px] font-normal leading-[1.2] text-white">
-                As microdramas expand globally, LEG partners with various
-                distribution platforms and app owners to build strategic
-                alliances that connect stories with millions of potential
-                viewers across Southeast Asia - accelerating discovery, boosting
-                engagement, and maximizing reach for every production.
+                {t.digital.global.description}
               </p>
             </motion.div>
             <div className="w-[600px] shrink-0" />

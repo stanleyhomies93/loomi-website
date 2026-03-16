@@ -5,29 +5,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/i18n/LanguageContext";
 
-const offices = [
-  {
-    city: "Singapore",
-    address:
-      "12 Woodlands Square, #10-73, Woods Square, Singapore 737715",
-    image: "/images/office-singapore.jpg",
-  },
-  {
-    city: "Malaysia",
-    address:
-      "D-12-06, Sunway Nexis Soho, Jalan PJU 5/1, Kota Damansara, 47810 Petaling Jaya, Selangor, Malaysia",
-    image: "/images/office-malaysia.jpg",
-  },
-  {
-    city: "Hong Kong",
-    address:
-      "Unit 2004-06, 20/F Strand 50, 50 Bonham Strand Sheung Wan, Hong Kong",
-    image: "/images/office-hongkong.jpg",
-  },
+const officeImages = [
+  "/images/office-singapore.jpg",
+  "/images/office-malaysia.jpg",
+  "/images/office-hongkong.jpg",
 ];
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
+  const offices = t.contact.offices.map((office, i) => ({
+    ...office,
+    image: officeImages[i],
+  }));
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -72,7 +65,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Company Information
+          {t.contact.companyInfo}
         </motion.h1>
       </section>
 
@@ -82,7 +75,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {offices.map((office, i) => (
               <motion.div
-                key={office.city}
+                key={i}
                 className="overflow-hidden rounded-[13px] border border-white/10 bg-white/10 p-4"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -127,11 +120,10 @@ export default function ContactPage() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="mb-4 md:mb-6 text-[36px] md:text-[72px] font-bold leading-[1] text-white">
-                Contact Us
+                {t.contact.contactUs}
               </h2>
               <p className="mb-6 md:mb-8 md:max-w-[508px] text-[16px] md:text-[22px] leading-[1.6] text-white">
-                For any questions about our company, our products or
-                solutions, please contact us.
+                {t.contact.contactDescription}
               </p>
 
               {/* Email */}
@@ -179,7 +171,7 @@ export default function ContactPage() {
             >
               <input
                 type="text"
-                placeholder="Name"
+                placeholder={t.contact.form.name}
                 required
                 value={formData.name}
                 onChange={(e) =>
@@ -189,7 +181,7 @@ export default function ContactPage() {
               />
               <input
                 type="email"
-                placeholder="Email"
+                placeholder={t.contact.form.email}
                 required
                 value={formData.email}
                 onChange={(e) =>
@@ -199,7 +191,7 @@ export default function ContactPage() {
               />
               <input
                 type="text"
-                placeholder="Subject"
+                placeholder={t.contact.form.subject}
                 required
                 value={formData.subject}
                 onChange={(e) =>
@@ -208,7 +200,7 @@ export default function ContactPage() {
                 className="h-[64px] w-full rounded-[7px] bg-[#f9f9f9] px-6 text-[18px] text-[#333] placeholder:text-[#6b6b6b] outline-none focus:ring-2 focus:ring-[#f95800]"
               />
               <textarea
-                placeholder="Message"
+                placeholder={t.contact.form.message}
                 required
                 rows={6}
                 value={formData.message}
@@ -222,17 +214,17 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 className="h-[78px] w-full rounded-[7px] bg-[#f95800] text-[21px] font-medium text-white uppercase tracking-wide transition-colors hover:bg-[#e04f00] disabled:opacity-60"
               >
-                {status === "sending" ? "SENDING..." : "SUBMIT"}
+                {status === "sending" ? t.contact.form.sending : t.contact.form.submit}
               </button>
 
               {status === "success" && (
                 <p className="text-center text-[16px] text-green-400">
-                  Message sent successfully!
+                  {t.contact.form.success}
                 </p>
               )}
               {status === "error" && (
                 <p className="text-center text-[16px] text-red-400">
-                  Failed to send. Please try again.
+                  {t.contact.form.error}
                 </p>
               )}
             </motion.form>

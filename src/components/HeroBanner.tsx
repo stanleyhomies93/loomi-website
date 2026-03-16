@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HeroBanner() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section className="relative h-[600px] md:h-[1080px] w-full overflow-hidden bg-[#000421]">
@@ -81,10 +83,10 @@ export default function HeroBanner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Shaping Tomorrow&apos;s
+          {t.home.hero.title}
           <br />
-          Entertainment with{" "}
-          <span className="text-[#f95800]">AI</span>
+          {t.home.hero.titleLine2}{" "}
+          <span className="text-[#f95800]">{t.home.hero.ai}</span>
         </motion.h1>
       </div>
 

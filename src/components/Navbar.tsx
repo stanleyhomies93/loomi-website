@@ -4,18 +4,21 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
-const navLinks = [
-  { label: "Studios", href: "/studios" },
-  { label: "Digital", href: "/digital" },
-  { label: "Ventures", href: "/ventures" },
-  { label: "News", href: "/news" },
-  { label: "Contact Us", href: "/contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.studios, href: "/studios" },
+    { label: t.nav.digital, href: "/digital" },
+    { label: t.nav.ventures, href: "/ventures" },
+    { label: t.nav.news, href: "/news" },
+    { label: t.nav.contactUs, href: "/contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,13 +63,14 @@ export default function Navbar() {
         <div className="desktop-nav items-center gap-6">
           {navLinks.map((link) => (
             <Link
-              key={link.label}
+              key={link.href}
               href={link.href}
               className="text-[16px] lg:text-[18px] leading-[1.4] text-white transition-colors hover:text-[#f95800]"
             >
               {link.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
 
         {/* Hamburger button */}
@@ -106,7 +110,7 @@ export default function Navbar() {
             <div className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   className="text-[16px] leading-[1.4] text-white transition-colors hover:text-[#f95800]"
                   onClick={() => setMenuOpen(false)}
@@ -114,6 +118,9 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <LanguageSwitcher />
+              </div>
             </div>
           </motion.div>
         )}

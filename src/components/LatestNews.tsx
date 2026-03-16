@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { newsArticles } from "@/data/news";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function LatestNews() {
   const displayedArticles = newsArticles.slice(0, 3);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { t } = useLanguage();
 
   const checkScroll = () => {
     const el = scrollRef.current;
@@ -40,7 +42,7 @@ export default function LatestNews() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          Latest{" "}
+          {t.home.news.latest}{" "}
           <span
             style={{
               backgroundImage: "linear-gradient(to right, #f95800, #ff8a00)",
@@ -48,7 +50,7 @@ export default function LatestNews() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            News
+            {t.home.news.highlight}
           </span>
         </motion.h2>
 
@@ -59,7 +61,7 @@ export default function LatestNews() {
             onScroll={checkScroll}
             className="flex overflow-x-auto snap-x snap-mandatory gap-4 scrollbar-hide"
           >
-            {displayedArticles.map((article, i) => (
+            {displayedArticles.map((article) => (
               <div key={article.slug} className="shrink-0 snap-center w-[85vw] max-w-[340px]">
                 <Link
                   href={`/news/${article.slug}`}

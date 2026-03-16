@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 const proximaNova = localFont({
   src: [
@@ -58,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${proximaNova.variable} antialiased`}>
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

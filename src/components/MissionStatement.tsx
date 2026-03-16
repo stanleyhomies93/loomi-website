@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function MissionStatement() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative bg-[#000421] py-2 md:py-2">
       <motion.div
@@ -22,9 +25,7 @@ export default function MissionStatement() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          We&apos;re shaping the entertainment industry with AI —{" "}
-          from production, distribution, and monetization to deliver
-          storytelling experiences tailored for today&apos;s audiences.
+          {t.home.mission.text}
         </p>
       </motion.div>
 
