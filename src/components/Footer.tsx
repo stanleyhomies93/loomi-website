@@ -57,7 +57,7 @@ export default function Footer() {
             {/* Social buttons */}
             <div className="flex gap-3">
               <Link
-                href="https://www.linkedin.com/company/loomi-entertainment-group/posts/?feedView=all"
+                href="https://www.linkedin.com/company/loomi-entertainment-group/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-[13px] border-[0.5px] border-white/30 bg-white/10 px-4 py-3 text-[20px] text-white/70 transition-colors hover:bg-white/20"
@@ -219,7 +219,7 @@ export default function Footer() {
             {/* Social icon buttons */}
             <div className="flex gap-3">
               <Link
-                href="https://www.linkedin.com/company/loomi-entertainment-group/posts/?feedView=all"
+                href="https://www.linkedin.com/company/loomi-entertainment-group/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-[48px] h-[48px] rounded-[13px] border-[0.5px] border-white/30 bg-white/10 transition-colors hover:bg-white/20"
