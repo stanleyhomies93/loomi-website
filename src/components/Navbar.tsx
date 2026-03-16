@@ -39,7 +39,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
         scrolled || menuOpen
           ? "bg-[#000421]/95 backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-gradient-to-b from-[#000421]/80 to-transparent"
       }`}
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}

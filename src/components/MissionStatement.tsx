@@ -16,7 +16,7 @@ export default function MissionStatement() {
           className="text-[22px] md:text-[48px] font-semibold leading-[1.3] md:leading-[56px] tracking-[-0.48px]"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, #ffffff, #0d61e8 362.5%)",
+              "linear-gradient(to bottom, #ffffff 60%, #4a8af5 362.5%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}

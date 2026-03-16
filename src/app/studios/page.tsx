@@ -134,7 +134,7 @@ export default function StudiosPage() {
       <section className="relative bg-[#000421] py-8 md:py-8">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
-            className="mx-auto max-w-[1181px] text-center text-[28px] md:text-[48px] font-semibold leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
+            className="mx-auto max-w-[1181px] text-center text-[22px] md:text-[48px] font-semibold leading-[1.3] md:leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
