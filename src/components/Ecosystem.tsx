@@ -71,21 +71,74 @@ export default function Ecosystem() {
           entertainment is built, delivered, and scaled.
         </motion.p>
 
-        {/* Cards - horizontal scroll on mobile, centered row on desktop */}
-        <div className="flex md:flex-row md:items-center md:justify-center md:gap-0 md:-space-x-6 overflow-x-auto snap-x snap-mandatory gap-4 px-6 md:px-0 -mx-6 md:mx-0 scrollbar-hide">
+        {/* Mobile Cards - horizontal scroll with rounded cards */}
+        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 px-6 -mx-6 scrollbar-hide">
+          {ecosystemCards.map((card, i) => (
+            <Link
+              key={card.title}
+              href={card.href}
+              className="group relative shrink-0 snap-center w-[85vw] max-w-[340px]"
+            >
+              <motion.div
+                className="relative h-[480px] overflow-hidden rounded-[20px]"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+              >
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/30 via-[15%] to-transparent to-[50%]" />
+                {/* Glow border */}
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-[20px]"
+                  style={{
+                    boxShadow:
+                      "inset 0px -34px 26.7px 0px rgba(102,148,255,0.5), inset 0px -8px 16.7px 0px rgba(255,255,255,0.64), inset 0px -30px 12px 0px rgba(35,101,255,0.15), inset 0px -1px 10.8px 0px rgba(102,148,255,0.2)",
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                  <div>
+                    <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
+                      {card.label}
+                    </p>
+                    <p className="text-[36px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
+                      {card.title}
+                    </p>
+                  </div>
+                  <svg
+                    width="28"
+                    height="32"
+                    viewBox="0 0 20 24"
+                    fill="none"
+                    className="mb-1 shrink-0"
+                  >
+                    <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
+                  </svg>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop Cards - parallelogram mask */}
+        <div className="hidden md:flex items-center justify-center gap-0 -space-x-6">
           {ecosystemCards.map((card, i) => (
             <motion.div
               key={card.title}
-              className="group relative cursor-pointer shrink-0 snap-center"
+              className="group relative cursor-pointer"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ scale: 1.03 }}
             >
-              {/* Card with skewed shape using SVG mask */}
               <div
-                className="relative h-[350px] w-[280px] md:h-[550px] md:w-[452px] overflow-hidden"
+                className="relative h-[550px] w-[452px] overflow-hidden"
                 style={{
                   WebkitMaskImage: "url(/images/card-mask.svg)",
                   WebkitMaskSize: "100% 100%",
@@ -95,18 +148,13 @@ export default function Ecosystem() {
                   maskRepeat: "no-repeat",
                 }}
               >
-                {/* Card image */}
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-
-                {/* Bottom gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%]" />
-
-                {/* Text & play button */}
                 <div className="absolute bottom-10 left-12 right-12 flex items-end justify-between">
                   <div>
                     <p className="text-[17px] tracking-[-0.3px] text-[#f95800]">
@@ -115,7 +163,6 @@ export default function Ecosystem() {
                     <p className="text-[38px] font-semibold leading-[1.2] tracking-[-0.38px] text-white">
                       {card.title}
                     </p>
-                    {/* Description shown on hover */}
                     <p className="mt-2 max-w-[300px] text-[14px] leading-[1.5] text-white/80 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                       {card.description}
                     </p>
@@ -132,8 +179,6 @@ export default function Ecosystem() {
                   </Link>
                 </div>
               </div>
-
-              {/* Glow overlay matching the skewed shape */}
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
