@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function MissionStatement() {
   return (
-    <section className="relative bg-[#000421] py-12 md:py-24">
+    <section className="relative bg-[#000421] py-2 md:py-2">
       <motion.div
         className="mx-auto max-w-[1211px] px-6 text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -26,6 +27,17 @@ export default function MissionStatement() {
           storytelling experiences tailored for today&apos;s audiences.
         </p>
       </motion.div>
+
+      {/* Decorative light line */}
+      <div className="mx-auto mt-0 md:mt-2 flex justify-center -mb-16 md:-mb-24">
+        <Image
+          src="/images/studios-lines.png"
+          alt=""
+          width={444}
+          height={296}
+          className="opacity-60 w-[250px] md:w-[444px] h-auto"
+        />
+      </div>
     </section>
   );
 }

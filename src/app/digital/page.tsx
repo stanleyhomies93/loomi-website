@@ -17,7 +17,7 @@ export default function DigitalPage() {
             src="/images/digital-hero.jpg"
             alt="Digital hero"
             fill
-            className="object-cover object-center"
+            className="object-cover object-[70%_center] md:object-center"
             priority
           />
         </div>
@@ -48,8 +48,8 @@ export default function DigitalPage() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-start pt-24 items-center md:justify-end md:items-start md:pt-0 pb-0 md:pb-24 px-6">
-          <div className="mx-auto w-full max-w-[1320px] flex flex-col items-center md:items-start">
+        <div className="relative z-10 flex h-full flex-col justify-start pt-24 items-center md:justify-center md:items-start md:pt-0 pb-0 md:pb-0 px-6">
+          <div className="mx-auto w-full max-w-[1320px] flex flex-col items-center md:items-start md:pl-12">
             <motion.div
               className="flex flex-col items-center md:items-start"
               initial={{ opacity: 0, y: 20 }}
@@ -57,9 +57,7 @@ export default function DigitalPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-1 flex items-center gap-3">
-                <svg width="16" height="18" viewBox="0 0 20 24" fill="none">
-                  <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                </svg>
+                <Image src="/images/play-icon.png" alt="" width={16} height={18} className="w-[16px] h-[18px] object-contain" />
                 <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
               </div>
               <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
@@ -71,7 +69,7 @@ export default function DigitalPage() {
       </section>
 
       {/* Subtitle */}
-      <section className="relative bg-[#000421] py-8 md:py-16">
+      <section className="relative bg-[#000421] py-4 md:py-8">
         <div className="mx-auto max-w-[1320px] px-6">
           <motion.h2
             className="text-center text-[22px] md:text-[48px] font-semibold tracking-[-0.48px] leading-[1.3] md:leading-[56px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
@@ -91,19 +89,21 @@ export default function DigitalPage() {
           </motion.h2>
         </div>
 
+        {/* Decorative divider line */}
+        <div className="mx-auto mt-4 md:mt-6 flex justify-center -mb-8 md:-mb-12">
+          <Image
+            src="/images/digital-divider-line.png"
+            alt=""
+            width={1440}
+            height={80}
+            className="w-[60%] md:w-[40%] h-auto"
+          />
+        </div>
       </section>
 
       {/* Distribution via LOOMI AI Short Drama Platform */}
       {/* Mobile: content on top, video below */}
       <section className="md:hidden bg-[#000421]">
-        {/* Top border glow */}
-        <div
-          className="h-[2px]"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 20%, #0d61e8 50%, transparent 80%)",
-          }}
-        />
 
         <div className="px-6 pt-12 pb-2">
           <motion.div
@@ -134,7 +134,7 @@ export default function DigitalPage() {
               enabling creative engagement at scale across all touchpoints.
             </p>
             <div className="flex gap-3 justify-center">
-              <a href="#" className="transition-transform hover:scale-105">
+              <a href="https://apps.apple.com/sg/app/loomi-short-dramas/id6754369030" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
                 <Image
                   src="/images/appstore.png"
                   alt="Download on the App Store"
@@ -143,7 +143,7 @@ export default function DigitalPage() {
                   className="h-[44px] w-auto"
                 />
               </a>
-              <a href="#" className="transition-transform hover:scale-105">
+              <a href="https://play.google.com/store/apps/details?id=com.loomi.asia&hl=en_SG" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
                 <Image
                   src="/images/googleplay.png"
                   alt="Get it on Google Play"
@@ -181,13 +181,6 @@ export default function DigitalPage() {
         >
           <source src="/videos/digital-loomi.mp4" type="video/mp4" />
         </video>
-        <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-[2px]"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent 20%, #0d61e8 50%, transparent 80%)",
-          }}
-        />
         <div className="relative z-10 mx-auto max-w-[1320px] px-6 py-28">
           <div className="flex items-center gap-16">
             <motion.div
@@ -218,7 +211,7 @@ export default function DigitalPage() {
                 enabling creative engagement at scale across all touchpoints.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="transition-transform hover:scale-105">
+                <a href="https://apps.apple.com/sg/app/loomi-short-dramas/id6754369030" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
                   <Image
                     src="/images/appstore.png"
                     alt="Download on the App Store"
@@ -227,7 +220,7 @@ export default function DigitalPage() {
                     className="h-[60px] w-auto"
                   />
                 </a>
-                <a href="#" className="transition-transform hover:scale-105">
+                <a href="https://play.google.com/store/apps/details?id=com.loomi.asia&hl=en_SG" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105">
                   <Image
                     src="/images/googleplay.png"
                     alt="Get it on Google Play"
@@ -268,7 +261,9 @@ export default function DigitalPage() {
             </p>
             <div className="flex justify-center">
               <a
-                href="#"
+                href="https://www.tiktok.com/@loomi_entertainment"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 transition-transform hover:scale-105"
               >
                 <Image
@@ -315,7 +310,7 @@ export default function DigitalPage() {
           <div className="flex items-center gap-16">
             <div className="relative flex h-[600px] w-[520px] shrink-0 items-center justify-center rounded-[20px]" />
             <motion.div
-              className="flex-1"
+              className="flex-1 pl-12"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -334,7 +329,9 @@ export default function DigitalPage() {
                 engagement and delivering performance-based results.
               </p>
               <a
-                href="#"
+                href="https://www.tiktok.com/@loomi_entertainment"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 rounded-full bg-white px-7 py-4 transition-transform hover:scale-105"
               >
                 <Image
@@ -386,7 +383,7 @@ export default function DigitalPage() {
             src="/images/digital-map-bg.png"
             alt="Global Distribution Networks"
             fill
-            className="object-cover object-center"
+            className="object-cover object-right md:object-center"
           />
           <div
             className="pointer-events-none absolute inset-x-0 top-0 h-[60px]"

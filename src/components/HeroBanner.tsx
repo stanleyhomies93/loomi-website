@@ -58,7 +58,7 @@ export default function HeroBanner() {
       />
 
       {/* Content overlay */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[120px] md:pt-[160px]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[100px] md:pt-[140px]">
         {/* Loomi Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,13 +89,6 @@ export default function HeroBanner() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-[30px] md:bottom-[60px] left-1/2 z-10 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="h-[60px] md:h-[120px] w-[3px] bg-gradient-to-b from-white/60 to-transparent" />
-      </motion.div>
     </section>
   );
 }

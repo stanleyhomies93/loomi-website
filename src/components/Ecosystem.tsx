@@ -7,7 +7,7 @@ import Link from "next/link";
 const ecosystemCards = [
   {
     label: "LEG",
-    title: "Venture",
+    title: "Ventures",
     image: "/images/ecosystem-venture-new.png",
     description: "We support storytellers with resources, technology, and guidance, helping them scale their vision and reach wider audiences.",
     href: "/ventures",
@@ -71,23 +71,17 @@ export default function Ecosystem() {
           entertainment is built, delivered, and scaled.
         </motion.p>
 
-        {/* Mobile Cards - horizontal scroll with rounded cards */}
-        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 px-6 -mx-6 scrollbar-hide">
+        {/* Mobile Cards - horizontal scroll */}
+        <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-2 px-4 -mx-4 scrollbar-hide">
           {ecosystemCards.map((card, i) => (
             <Link
               key={card.title}
               href={card.href}
-              className="group relative shrink-0 snap-center w-[85vw] max-w-[340px]"
+              className="group relative shrink-0 snap-center w-[72vw] max-w-[300px]"
             >
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-              >
+              <div className="relative">
                 <div
-                  className="relative h-[480px] w-[300px] overflow-hidden"
+                  className="relative h-[380px] w-full overflow-hidden"
                   style={{
                     WebkitMaskImage: "url(/images/card-mask.svg)",
                     WebkitMaskSize: "100% 100%",
@@ -126,7 +120,7 @@ export default function Ecosystem() {
                       "inset 0px -34px 26.7px 0px rgba(102,148,255,0.5), inset 0px -8px 16.7px 0px rgba(255,255,255,0.64), inset 0px -30px 12px 0px rgba(35,101,255,0.15), inset 0px -1px 10.8px 0px rgba(102,148,255,0.2)",
                   }}
                 />
-              </motion.div>
+              </div>
             </Link>
           ))}
         </div>
@@ -160,29 +154,40 @@ export default function Ecosystem() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%]" />
-                <div className="absolute bottom-10 left-12 right-12 flex items-end justify-between">
-                  <div>
-                    <p className="text-[17px] tracking-[-0.3px] text-[#f95800]">
-                      {card.label}
-                    </p>
-                    <p className="text-[38px] font-semibold leading-[1.2] tracking-[-0.38px] text-white">
-                      {card.title}
-                    </p>
-                    <p className="mt-2 max-w-[300px] text-[14px] leading-[1.5] text-white/80 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                {/* Gradient - strengthens on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/50 via-[30%] to-transparent to-[60%] transition-all duration-300 group-hover:via-[#000421]/70 group-hover:via-[45%] group-hover:to-[#000421]/30" />
+
+                {/* Content area */}
+                <div className="absolute bottom-10 left-12 right-20 transition-all duration-300 group-hover:bottom-0 group-hover:top-0 group-hover:left-16 group-hover:right-16 group-hover:flex group-hover:flex-col group-hover:items-center group-hover:justify-center">
+                  <div className="flex items-end justify-between transition-all duration-300 group-hover:justify-center">
+                    <div className="transition-all duration-300 group-hover:text-center">
+                      <p className="text-[17px] tracking-[-0.3px] text-[#f95800] transition-opacity duration-300 group-hover:opacity-0 group-hover:h-0 group-hover:overflow-hidden">
+                        {card.label}
+                      </p>
+                      <p className="text-[38px] font-semibold leading-[1.2] tracking-[-0.38px] text-white transition-opacity duration-300 group-hover:opacity-0 group-hover:h-0 group-hover:overflow-hidden">
+                        {card.title}
+                      </p>
+                    </div>
+                    {/* Play button - hides on hover */}
+                    <div className="mb-1 mr-10 shrink-0 transition-opacity duration-300 group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden">
+                      <Image src="/images/play-icon.png" alt="" width={24} height={28} className="w-[24px] h-[28px] object-contain" />
+                    </div>
+                  </div>
+                  {/* Description + CTA - appears on hover */}
+                  <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-h-[250px] group-hover:opacity-100">
+                    <p className="mt-3 text-center text-[14px] italic leading-[1.6] text-white/90">
                       {card.description}
                     </p>
+                    <div className="mt-5 flex justify-center">
+                      <Link
+                        href={card.href}
+                        className="inline-flex items-center justify-center rounded-[6px] px-10 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-white"
+                        style={{ background: "linear-gradient(135deg, #f95800, #ff8a00)" }}
+                      >
+                        Learn More
+                      </Link>
+                    </div>
                   </div>
-                  <Link href={card.href} className="mb-2 shrink-0">
-                    <svg
-                      width="24"
-                      height="28"
-                      viewBox="0 0 20 24"
-                      fill="none"
-                    >
-                      <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                    </svg>
-                  </Link>
                 </div>
               </div>
               <div

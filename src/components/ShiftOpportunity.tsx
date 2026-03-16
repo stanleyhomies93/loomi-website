@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ShiftOpportunity() {
   return (
-    <section className="relative bg-[#000421] py-4 md:py-2 overflow-hidden">
+    <section className="relative bg-[#000421] py-2 md:py-1 overflow-hidden">
       <div className="mx-auto max-w-[1240px] px-6">
         <div className="relative flex flex-col-reverse md:flex-row items-center">
           {/* Left text */}
@@ -45,7 +45,7 @@ export default function ShiftOpportunity() {
 
           {/* Right image - overlapping closer to text */}
           <motion.div
-            className="relative mb-0 md:mb-0 md:mt-0 md:-mr-[100px] md:ml-[-20px] h-[400px] md:h-[722px] w-full md:w-[948px] shrink-0 -my-12 md:my-0"
+            className="relative mb-0 md:mb-0 md:mt-0 md:-mr-[100px] md:ml-[-20px] h-[400px] md:h-[1040px] w-full md:w-[1366px] shrink-0 -my-12 md:my-0"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}

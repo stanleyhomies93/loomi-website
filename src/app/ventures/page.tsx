@@ -65,8 +65,8 @@ export default function VenturesPage() {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-start pt-24 items-center md:justify-end md:items-start md:pt-0 pb-0 md:pb-24 px-6">
-          <div className="mx-auto w-full max-w-[1320px] flex flex-col items-center md:items-start">
+        <div className="relative z-10 flex h-full flex-col justify-start pt-24 items-center md:justify-center md:items-start md:pt-0 pb-0 md:pb-0 px-6">
+          <div className="mx-auto w-full max-w-[1320px] flex flex-col items-center md:items-start md:pl-12">
             <motion.div
               className="flex flex-col items-center md:items-start"
               initial={{ opacity: 0, y: 20 }}
@@ -74,9 +74,7 @@ export default function VenturesPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-1 flex items-center gap-3">
-                <svg width="16" height="18" viewBox="0 0 20 24" fill="none">
-                  <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                </svg>
+                <Image src="/images/play-icon.png" alt="" width={16} height={18} className="w-[16px] h-[18px] object-contain" />
                 <span className="text-[18px] font-semibold text-[#f95800]">LEG</span>
               </div>
               <h1 className="text-[40px] md:text-[64px] font-semibold leading-[1.1] text-white">
