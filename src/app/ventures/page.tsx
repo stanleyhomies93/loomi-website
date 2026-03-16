@@ -91,7 +91,7 @@ export default function VenturesPage() {
       <section className="relative bg-[#000421] py-8 md:py-16">
         <div className="mx-auto max-w-[1320px] px-6">
           <motion.h2
-            className="text-center text-[28px] md:text-[48px] font-semibold tracking-[-0.48px] leading-[1.3] md:leading-[56px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
+            className="text-center text-[28px] md:text-[48px] font-semibold tracking-[-0.48px] leading-[1.3] md:leading-[56px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -128,7 +128,7 @@ export default function VenturesPage() {
           {ventures.map((item, i) => (
             <motion.div
               key={item.title}
-              className="flex flex-col md:flex-row md:h-[497px] overflow-hidden rounded-[16px] border border-[#f95800]/30"
+              className="flex flex-col md:flex-row md:h-[497px] overflow-hidden rounded-[16px] border border-white/10"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}

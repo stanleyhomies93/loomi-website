@@ -2,22 +2,29 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const ecosystemCards = [
   {
     label: "LEG",
     title: "Venture",
     image: "/images/ecosystem-venture-new.png",
+    description: "We support storytellers with resources, technology, and guidance, helping them scale their vision and reach wider audiences.",
+    href: "/ventures",
   },
   {
     label: "LEG",
     title: "Studios",
     image: "/images/ecosystem-studios-new.png",
+    description: "We push the boundaries of storytelling with AI-powered tools, redefining how content is created, distributed, and experienced.",
+    href: "/studios",
   },
   {
     label: "LEG",
     title: "Digital",
     image: "/images/ecosystem-digital-new.png",
+    description: "We build strong partnerships across the ecosystem — with creators, platforms, and audiences — to amplify storytelling and create shared success.",
+    href: "/digital",
   },
 ];
 
@@ -108,16 +115,21 @@ export default function Ecosystem() {
                     <p className="text-[38px] font-semibold leading-[1.2] tracking-[-0.38px] text-white">
                       {card.title}
                     </p>
+                    {/* Description shown on hover */}
+                    <p className="mt-2 max-w-[300px] text-[14px] leading-[1.5] text-white/80 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                      {card.description}
+                    </p>
                   </div>
-                  <svg
-                    width="24"
-                    height="28"
-                    viewBox="0 0 20 24"
-                    fill="none"
-                    className="mb-2 shrink-0"
-                  >
-                    <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
-                  </svg>
+                  <Link href={card.href} className="mb-2 shrink-0">
+                    <svg
+                      width="24"
+                      height="28"
+                      viewBox="0 0 20 24"
+                      fill="none"
+                    >
+                      <path d="M20 12L0 24V0L20 12Z" fill="#f95800" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
 

@@ -10,31 +10,31 @@ const features = [
     label: "Prompt Optimization Engine",
     text: "Type rough ideas, get cinematic results.\nNo technical skills needed.",
     image: "/images/studios-feat-prompt1.png",
-    imagePosition: "right" as const,
+    imagePosition: "left" as const,
   },
   {
     label: "Style Lock",
     text: "Set your visual style once — every\nscene stays consistent automatically.",
     image: "/images/studios-feat-style1.png",
-    imagePosition: "left" as const,
+    imagePosition: "right" as const,
   },
   {
     label: "Character Memory",
     text: "Your characters look the same in\nevery single scene. No more\nrandom face changes.",
     image: "/images/studios-feat-character1.png",
-    imagePosition: "right" as const,
+    imagePosition: "left" as const,
   },
   {
     label: "Narrative-Aware Generation",
-    text: "Imaginary is designed for drama\ncreation, streamlining the entire\nstorytelling workflow from start to finish\nwithin a single project.",
+    text: "Imaginary is designed for drama\ncreation, streamlining the entire\nstorytelling workflow from start\nto finish within a single project.",
     image: "/images/studios-feat-narrative.png",
-    imagePosition: "left" as const,
+    imagePosition: "right" as const,
   },
   {
     label: "World Builder",
     text: "One sentence becomes a full story\nuniverse — characters, scenes, and all.",
     image: "/images/studios-feat-worldbuilder.png",
-    imagePosition: "right" as const,
+    imagePosition: "left" as const,
   },
 ];
 
@@ -134,7 +134,7 @@ export default function StudiosPage() {
       <section className="relative bg-[#000421] py-8 md:py-8">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
-            className="mx-auto max-w-[1181px] text-center text-[28px] md:text-[48px] font-semibold leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
+            className="mx-auto max-w-[1181px] text-center text-[28px] md:text-[48px] font-semibold leading-[1.1] tracking-[-0.48px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -216,7 +216,7 @@ export default function StudiosPage() {
       <section className="relative bg-[#000421] py-16 md:py-28">
         <div className="mx-auto max-w-[1240px] px-6">
           <motion.h2
-            className="text-center text-[32px] md:text-[48px] font-semibold tracking-[-0.32px] md:tracking-[-0.48px] leading-[1.3] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
+            className="text-center text-[32px] md:text-[48px] font-semibold tracking-[-0.32px] md:tracking-[-0.48px] leading-[1.3] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -246,7 +246,7 @@ export default function StudiosPage() {
               transition={{ duration: 0.7 }}
             >
               {/* Image - shows after text on mobile */}
-              <div className="relative w-full md:w-[520px] shrink-0 overflow-hidden rounded-[13px] order-last md:order-none">
+              <div className="relative w-full md:w-[624px] shrink-0 overflow-hidden rounded-[13px] order-last md:order-none">
                 {feature.image ? (
                   <Image
                     src={feature.image}

@@ -74,7 +74,7 @@ export default function DigitalPage() {
       <section className="relative bg-[#000421] py-8 md:py-16">
         <div className="mx-auto max-w-[1320px] px-6">
           <motion.h2
-            className="text-center text-[30px] md:text-[48px] font-semibold tracking-[-0.48px] leading-[1.3] md:leading-[56px] bg-gradient-to-b from-white to-[#0d61e8] bg-clip-text text-transparent"
+            className="text-center text-[30px] md:text-[48px] font-semibold tracking-[-0.48px] leading-[1.3] md:leading-[56px] bg-gradient-to-b from-white from-60% to-[#4a8af5] bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

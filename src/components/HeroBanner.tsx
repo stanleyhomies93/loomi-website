@@ -58,7 +58,7 @@ export default function HeroBanner() {
       />
 
       {/* Content overlay */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[140px] md:pt-[210px]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[120px] md:pt-[160px]">
         {/* Loomi Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
