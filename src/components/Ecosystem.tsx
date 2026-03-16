@@ -71,12 +71,12 @@ export default function Ecosystem() {
           entertainment is built, delivered, and scaled.
         </motion.p>
 
-        {/* Cards */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0 md:-space-x-6">
+        {/* Cards - horizontal scroll on mobile, centered row on desktop */}
+        <div className="flex md:flex-row md:items-center md:justify-center md:gap-0 md:-space-x-6 overflow-x-auto snap-x snap-mandatory gap-4 px-6 md:px-0 -mx-6 md:mx-0 scrollbar-hide">
           {ecosystemCards.map((card, i) => (
             <motion.div
               key={card.title}
-              className="group relative cursor-pointer"
+              className="group relative cursor-pointer shrink-0 snap-center"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
