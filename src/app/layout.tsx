@@ -49,6 +49,33 @@ export const metadata: Metadata = {
   title: "Loomi Entertainment Group | Shaping Tomorrow's Entertainment with AI",
   description:
     "We're shaping the entertainment industry with AI — from production, distribution, and monetization to deliver storytelling experiences tailored for today's audiences.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "Loomi Entertainment Group | Shaping Tomorrow's Entertainment with AI",
+    description:
+      "We're shaping the entertainment industry with AI — from production, distribution, and monetization to deliver storytelling experiences tailored for today's audiences.",
+    url: "https://loomi.asia",
+    siteName: "Loomi Entertainment Group",
+    images: [
+      {
+        url: "/images/hero-banner.jpg",
+        width: 1920,
+        height: 814,
+        alt: "Loomi Entertainment Group",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Loomi Entertainment Group | Shaping Tomorrow's Entertainment with AI",
+    description:
+      "We're shaping the entertainment industry with AI — from production, distribution, and monetization to deliver storytelling experiences tailored for today's audiences.",
+    images: ["/images/hero-banner.jpg"],
+  },
 };
 
 export default function RootLayout({
