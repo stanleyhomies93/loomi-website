@@ -251,9 +251,7 @@ export default function StudiosPage() {
       <section className="relative bg-[#000421] pb-12 md:pb-24">
         <div className="flex justify-center">
           <motion.a
-            href="https://preview.imaginary-ai.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:info@loomi.asia"
             className="inline-flex items-center gap-3 rounded-full px-8 py-4 md:px-10 md:py-5 text-[16px] md:text-[20px] font-semibold text-white transition-transform hover:scale-105"
             style={{
               background: "linear-gradient(135deg, #f95800, #ff8a00)",

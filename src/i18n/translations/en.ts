@@ -134,7 +134,7 @@ const en = {
         text: "One sentence becomes a full story\nuniverse \u2014 characters, scenes, and all.",
       },
     ],
-    experienceImaginary: "Experience Imaginary",
+    experienceImaginary: "Get Early Access",
     imagination: {
       title: "The Only Limit Is Your",
       highlight: "Imagination",
@@ -243,6 +243,318 @@ const en = {
       success: "Message sent successfully!",
       error: "Failed to send. Please try again.",
     },
+  },
+  terms: {
+    title: "Terms & Conditions",
+    effectiveDate: "Effective Date: 9 March 2026",
+    intro:
+      'Welcome to Loomi Entertainment Group Limited (\u201cLoomi,\u201d \u201cwe,\u201d \u201cour,\u201d or \u201cus\u201d). By accessing or using our services, including our website and mobile applications (collectively, the \u201cServices\u201d), you agree to be bound by these Terms & Conditions (\u201cTerms\u201d). Please read these Terms carefully. If you do not agree, do not use our Services.',
+    sections: [
+      {
+        heading: "1. Acceptance of Terms",
+        paragraphs: [
+          "By using our Services, you confirm that you understand and agree to these Terms, including any additional guidelines or rules posted within our Services. Loomi may update these Terms at any time, and continued use of the Services constitutes acceptance of such updates.",
+        ],
+      },
+      {
+        heading: "2. Eligibility",
+        paragraphs: [
+          "You must be at least 13 years old to use our Services. If you are under 18, you may only use our Services under the supervision of a parent or legal guardian. You must provide accurate and complete information when creating an account and are responsible for maintaining the confidentiality of your account credentials.",
+        ],
+      },
+      {
+        heading: "3. Use of Services",
+        paragraphs: [
+          "Loomi grants you a limited, non-exclusive, non-transferable license to access and use the Services for personal, non-commercial purposes.",
+          "You may not use the Services to infringe any third-party rights, violate applicable laws, or upload harmful, offensive, or illegal content.",
+          "Loomi may suspend or terminate your access for violations of these Terms.",
+        ],
+      },
+      {
+        heading: "4. User Content",
+        paragraphs: [
+          'You retain ownership of content you submit (\u201cUser Content\u201d), but you grant Loomi a worldwide, royalty-free, sublicensable license to use, distribute, and display your User Content in connection with the Services.',
+          "You are solely responsible for your User Content and any consequences arising from its submission. Loomi does not guarantee the accuracy, integrity, or quality of User Content.",
+        ],
+      },
+      {
+        heading: "5. Restrictions",
+        paragraphs: [
+          "You agree not to:\n\u2022 Access the Services for unlawful purposes.\n\u2022 Attempt to interfere with the Services\u2019 security or functionality.\n\u2022 Use automated systems or bots to access or collect content from the Services.\n\u2022 Impersonate Loomi or any other person or entity.",
+        ],
+      },
+      {
+        heading: "6. Disclaimers",
+        paragraphs: [
+          'The Services are provided \u201cas is\u201d and \u201cas available.\u201d Loomi does not guarantee that the Services will be uninterrupted, error-free, or secure. To the fullest extent permitted by law, Loomi disclaims all warranties, express or implied.',
+        ],
+      },
+      {
+        heading: "7. Limitation of Liability",
+        paragraphs: [
+          "To the maximum extent permitted by law, Loomi shall not be liable for any indirect, incidental, consequential, or punitive damages arising from your use of the Services, including any loss of data, profits, or goodwill.",
+        ],
+      },
+      {
+        heading: "8. Indemnification",
+        paragraphs: [
+          "You agree to indemnify and hold harmless Loomi, its affiliates, officers, and employees from any claims, damages, liabilities, or expenses arising from your use of the Services, violation of these Terms, or infringement of third-party rights.",
+        ],
+      },
+      {
+        heading: "9. Termination",
+        paragraphs: [
+          "Loomi may suspend or terminate your account or access to the Services at any time, without notice, for violations of these Terms or other policies. Termination does not limit any other rights or remedies available to Loomi.",
+        ],
+      },
+      {
+        heading: "10. Governing Law",
+        paragraphs: [
+          "These Terms are governed by and construed in accordance with the laws of the British Virgin Islands. Any disputes arising under or in connection with these Terms shall be resolved exclusively in the courts of the British Virgin Islands.",
+        ],
+      },
+      {
+        heading: "11. Changes to Terms",
+        paragraphs: [
+          "Loomi may revise or update these Terms from time to time. The latest version will always be available on our website. Your continued use of the Services constitutes acceptance of the updated Terms.",
+        ],
+      },
+      {
+        heading: "12. Contact",
+        paragraphs: [
+          "For any questions or concerns regarding these Terms, please contact us via our website at www.loomi.asia.",
+        ],
+      },
+    ],
+    copyright: "\u00a9 2026 Loomi Entertainment Group Limited",
+  },
+  privacy: {
+    title: "Privacy Policy",
+    effectiveDate: "Effective Date: 9 March 2026",
+    intro: [
+      'Welcome to Loomi Entertainment Group Limited (\u201cLoomi,\u201d \u201cwe,\u201d \u201cour,\u201d or \u201cus\u201d). We are committed to protecting the privacy of our clients, visitors, and users of our website at www.loomi.asia or any other website, mobile version of the website, or mobile application operated by Loomi Entertainment Group Limited or its affiliates (collectively, the \u201cWebsite\u201d). In this Policy, \u201cyou\u201d refers to any user who provides information, including Personal Information (as defined below), and uses any features of the Website.',
+      "This Privacy Policy explains how we collect, use, share, and protect Personal Information, Usage Information, or any other information you provide. It also explains how you can access and update your Personal Information and make choices about how your information is used. This Policy does not apply to information collected by other means (including offline) or from other sources.",
+      "The use of information collected through our Website shall be limited to the purposes outlined in this Privacy Policy.",
+    ],
+    sections: [
+      {
+        heading: "1. Information Collection by Loomi",
+        subsections: [
+          {
+            subheading: "1.1 Data Controller and Data Processor",
+            paragraphs: [
+              "Loomi controls, collects, owns, and directs the use of Personal Information and Usage Information on its Website. Loomi is the data controller and data processor with respect to the information collected on the Website. For any questions regarding this Privacy Policy, please contact us via our Website.",
+            ],
+          },
+          {
+            subheading: "1.2 Legal Basis for Collection and Processing",
+            paragraphs: [
+              "We collect and process information based on:\n\u2022 Your consent at the time of providing Personal Information;\n\u2022 Legitimate interests, such as fraud prevention, system security, responding to inquiries, operating our network, and improving our Website;\n\u2022 Compliance with legal obligations or contractual necessity; or\n\u2022 Protection of vital interests of you or others.",
+            ],
+          },
+          {
+            subheading: "1.3 Basic Information",
+            paragraphs: [
+              "We may ask for Personal Information that could reasonably identify you, such as your name, email address, company address, and mobile number, when you access the Website or interact with our services. This may include registration, surveys, or other online forms.",
+            ],
+          },
+          {
+            subheading: "1.4 Additional Information",
+            paragraphs: [
+              "1.4.1 Cookies\nLoomi may use cookies to understand Website usability trends and improve your experience. Cookies store preferences and help personalize content. You may accept or decline cookies via your browser settings. Declining cookies may affect certain interactive features of the Website.",
+              "1.4.2 Information Collected Automatically\nWe may automatically collect Usage Information, such as your browser type, IP address, and URLs that referred you to the Website. If Usage Information is linked to your Personal Information, we treat it as Personal Information under this Privacy Policy.",
+              "1.4.3 Information from Third Parties\nWe may supplement information collected from you with data from third parties to improve services, tailor content, or provide opportunities relevant to your interests.",
+            ],
+          },
+          {
+            subheading: "1.5 Processing of Data",
+            paragraphs: [
+              "Loomi processes Personal Information and Usage Information to provide the requested services and for legitimate business purposes. Technical and organizational measures are in place to protect your information, including secure storage and encryption where applicable.",
+            ],
+          },
+          {
+            subheading: "1.6 User Rights",
+            paragraphs: [
+              "Users may:\n\u2022 Access, correct, or delete Personal Information;\n\u2022 Withdraw consent for processing where applicable;\n\u2022 Opt out of promotional communications via the Website;\n\u2022 Request transfer of Personal Information to another data controller;\n\u2022 Lodge complaints with supervisory authorities.",
+              "Requests will be acknowledged promptly and addressed within a reasonable timeframe.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "2. Use of Information Collected",
+        subsections: [
+          {
+            subheading: "2.1 Business Purposes",
+            paragraphs: [
+              "Loomi does not share Personal Information with third parties without consent, except as required by law. We may use Personal Information to:\n\u2022 Operate and improve the Website;\n\u2022 Create aggregated, anonymized information for analysis;\n\u2022 Investigate violations of policies or fraud;\n\u2022 Customize content and communications;\n\u2022 Confirm eligibility to use services;\n\u2022 Notify users about changes to the Website;\n\u2022 Comply with legal obligations;\n\u2022 Conduct market research and improve service quality;\n\u2022 Reinforce our Terms of Use.",
+            ],
+          },
+          {
+            subheading: "2.2 Anonymous Information",
+            paragraphs: [
+              "Non-identifiable data such as aggregated statistics may be shared with business partners for analysis or industry insights.",
+            ],
+          },
+          {
+            subheading: "2.3 Administrative and Legal Reasons",
+            paragraphs: [
+              "We may access, use, store, transfer, or disclose information, including Personal Information, to comply with laws, protect our rights, security, or prevent illegal activity.",
+            ],
+          },
+          {
+            subheading: "2.4 Business Transfer",
+            paragraphs: [
+              "In the event of corporate changes (mergers, acquisitions, restructuring), your information may be transferred to a successor entity.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "3. Third-Party Content and Links",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "The Website does not include or offer third-party products or services.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "4. Data Transfer",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "Your information may be processed in any country where Loomi or its affiliates operate, which may have different data protection laws. Appropriate safeguards are in place to protect your information.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "5. Data Retention",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "Personal Information will be retained as long as necessary to provide services. You may request deletion of your information via our Website.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "6. Children",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "The Website is not intended for children under 13. We require parental consent before collecting children\u2019s Personal Information, unless otherwise allowed by law.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "7. Security",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "We implement industry-standard measures to protect your information. However, no system is completely secure, and transmission of information is at your own risk.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "8. Compromise of Personal Information",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "In case of a data breach, Loomi will notify the relevant authorities as required by law.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "9. Contact & Policy Updates",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "For questions or concerns about this Privacy Policy, please contact us via our Website. Loomi may update this Privacy Policy at any time. Please check this page periodically for updates.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "10. Change of Information and Account Cancellation",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "Users are responsible for maintaining accurate information. Requests to update, rectify, or delete information can be submitted via the Website.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "11. Opt-In Communications",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "Users may opt in to receive promotional communications via the Website.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "12. Consent",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "By using the Website, you consent to the collection, use, storage, and transfer of your Personal Information as described in this Policy. You may withdraw consent via the Website.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "13. Governing Law",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "This Privacy Policy is governed by the laws of the British Virgin Islands. Disputes shall be resolved exclusively in the courts of the British Virgin Islands.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "14. Amendment",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "Loomi may update this Privacy Policy. Material changes will be notified via the Website.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "15. Contact Information",
+        subsections: [
+          {
+            subheading: "",
+            paragraphs: [
+              "For any queries or concerns, please contact us through our Website.",
+            ],
+          },
+        ],
+      },
+    ],
+    copyright: "\u00a9 2026 Loomi Entertainment Group Limited",
   },
 };
 
