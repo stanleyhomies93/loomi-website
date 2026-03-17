@@ -61,9 +61,8 @@ export default function Ecosystem() {
         {/* Mobile Cards - horizontal scroll */}
         <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-2 px-4 -mx-4 scrollbar-hide">
           {ecosystemCards.map((card) => (
-            <Link
+            <div
               key={card.href}
-              href={card.href}
               className="group relative shrink-0 snap-center w-[72vw] max-w-[300px]"
             >
               <div className="relative">
@@ -84,14 +83,31 @@ export default function Ecosystem() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%]" />
-                  <div className="absolute bottom-8 left-8 right-8">
+                  {/* Default gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/40 via-[20%] to-transparent to-[55%] transition-opacity duration-300 group-hover:opacity-0" />
+                  {/* Hover dark blue overlay */}
+                  <div className="absolute inset-0 bg-[#000421]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {/* Default label/title - hides on hover */}
+                  <div className="absolute bottom-8 left-8 right-8 transition-opacity duration-300 group-hover:opacity-0">
                     <p className="text-[15px] tracking-[-0.3px] text-[#f95800]">
                       {card.label}
                     </p>
                     <p className="text-[32px] font-semibold leading-[1.1] tracking-[-0.38px] text-white">
                       {card.title}
                     </p>
+                  </div>
+                  {/* Hover content - description + CTA */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center px-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="text-center text-[14px] italic leading-[1.6] text-white/90">
+                      {card.description}
+                    </p>
+                    <Link
+                      href={card.href}
+                      className="mt-4 inline-flex items-center justify-center rounded-[6px] px-8 py-3 text-[13px] font-semibold uppercase tracking-[1px] text-white"
+                      style={{ background: "linear-gradient(135deg, #f95800, #ff8a00)" }}
+                    >
+                      {t.home.ecosystem.learnMore}
+                    </Link>
                   </div>
                 </div>
                 <div
@@ -108,7 +124,7 @@ export default function Ecosystem() {
                   }}
                 />
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 

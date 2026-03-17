@@ -13,63 +13,6 @@ export type NewsBlock =
 
 export const newsArticles: NewsArticle[] = [
   {
-    slug: "loomi-partners-kt-studiogenie-k-drama-southeast-asia",
-    title:
-      "Loomi Entertainment Group Partners with KT Studiogenie to Bring Premium K-Drama to Southeast Asia",
-    date: "13 March 2026",
-    image: "/images/news-cover-5.png",
-    content: [
-      {
-        type: "paragraph",
-        text: "Loomi Entertainment Group (LEG) is proud to announce a landmark partnership with KT Studiogenie, one of the largest K-Drama distributors in the world, to bring their premium K-Drama titles to Southeast Asian audiences through the Loomi mobile app. The collaboration marks a major step forward in our mission to deliver the content Southeast Asia loves most — intelligently, accessibly, and on demand.",
-      },
-      { type: "spacer" },
-      { type: "heading", text: "What the Data Told Us" },
-      {
-        type: "paragraph",
-        text: "Great partnerships don't begin with luck. They begin with insight.",
-      },
-      {
-        type: "paragraph",
-        text: "Our AI-driven data intelligence has consistently pointed to one undeniable truth about the Southeast Asian entertainment landscape: the region's appetite for Korean drama is enormous, deeply rooted, and still growing. From heartfelt romance and family sagas to high-stakes thrillers and historical epics, K-Drama has captured the hearts of millions of viewers across Malaysia, Indonesia, the Philippines, Thailand, Vietnam, and beyond.",
-      },
-      {
-        type: "paragraph",
-        text: "This is not a passing trend. Korean content has built genuine, lasting cultural resonance across the region — influencing fashion, language, travel, and popular culture in ways that few entertainment phenomena ever do. For us, the data didn't just confirm what many already sensed. It gave us the clarity and conviction to act.",
-      },
-      { type: "spacer" },
-      { type: "heading", text: "KT Studiogenie" },
-      {
-        type: "paragraph",
-        text: "KT Studiogenie brings to this partnership a catalogue of premium Korean content backed by the production values, storytelling depth, and creative ambition that have made K-Drama a global force. As an institution with strong roots in the Korean entertainment ecosystem, KT Studiogenie represents exactly the kind of partner we sought — one whose creative excellence matches the high standards Southeast Asian audiences have come to expect from Korean content.",
-      },
-      {
-        type: "paragraph",
-        text: "Together, LEG and KT Studiogenie are building a bridge between two of the world's most dynamic entertainment markets.",
-      },
-      { type: "spacer" },
-      { type: "heading", text: "A Platform That Understands Its Audience" },
-      {
-        type: "paragraph",
-        text: "What makes this partnership more than a content licensing deal is the foundation it is built on. Our commitment to the Southeast Asian market goes beyond geography. It is cultural, behavioral, and data-informed. The platform is designed to understand not just who Southeast Asian audiences are, but how they watch, what keeps them engaged, and what they will come back for.",
-      },
-      {
-        type: "paragraph",
-        text: "That depth of understanding is what makes the Loomi mobile app the right home for KT Studiogenie's titles in this region. It ensures that premium Korean content doesn't simply land on our platform — it reaches the audiences who have been waiting for it, in the most engaging way possible.",
-      },
-      { type: "spacer" },
-      { type: "heading", text: "The Beginning of Something Bigger" },
-      {
-        type: "paragraph",
-        text: "This partnership is a reflection of LEG's broader strategy: identify where audience demand is strongest on the Loomi mobile app, move with speed and precision, and build relationships with world-class content partners to meet that demand head-on.",
-      },
-      {
-        type: "paragraph",
-        text: "And at LEG, we're just getting started.",
-      },
-    ],
-  },
-  {
     slug: "loomi-partners-col-group-original-microdramas",
     title:
       "Loomi Partners with COL Group and Greenlights Original Microdrama Slate as Southeast Asia Claims 23% of Global Vertical Drama Downloads",

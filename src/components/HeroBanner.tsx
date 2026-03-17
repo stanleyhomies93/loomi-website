@@ -11,18 +11,26 @@ export default function HeroBanner() {
 
   return (
     <section className="relative h-[600px] md:h-[1080px] w-full overflow-hidden bg-[#000421]">
-      {/* Background image — positioned down like Figma (top: 184px) */}
+      {/* Background image — mobile uses portrait image, desktop uses landscape */}
       <motion.div
-        className="absolute inset-x-0 top-[100px] md:top-[184px] h-[500px] md:h-[882px]"
+        className="absolute inset-x-0 top-[60px] md:top-[184px] h-[540px] md:h-[882px]"
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoaded ? 1 : 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <Image
+          src="/images/hero-banner-mobile.png"
+          alt="Hero background"
+          fill
+          className="object-cover object-top md:hidden"
+          priority
+          onLoad={() => setImageLoaded(true)}
+        />
+        <Image
           src="/images/hero-banner.jpg"
           alt="Hero background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center hidden md:block"
           priority
           onLoad={() => setImageLoaded(true)}
         />
@@ -60,7 +68,7 @@ export default function HeroBanner() {
       />
 
       {/* Content overlay */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[100px] md:pt-[140px]">
+      <div className="relative z-10 flex h-full flex-col items-center justify-start pt-[80px] md:pt-[140px]">
         {/* Loomi Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +80,7 @@ export default function HeroBanner() {
             alt="LOOMI Entertainment Group"
             width={354}
             height={45}
-            className="mb-4 w-[280px] md:w-[354px] h-auto"
+            className="mb-0 md:mb-4 w-[280px] md:w-[354px] h-auto"
           />
         </motion.div>
 

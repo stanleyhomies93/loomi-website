@@ -43,7 +43,7 @@ export default function ShiftOpportunity() {
 
           {/* Right image - overlapping closer to text */}
           <motion.div
-            className="relative mb-0 md:mb-0 md:mt-0 md:-mr-[250px] md:ml-[-160px] h-[400px] md:h-[850px] w-full md:w-[1100px] shrink-0 -my-12 md:my-0"
+            className="relative mb-0 md:mb-0 md:mt-0 md:-mr-[250px] md:ml-[-160px] h-[390px] md:h-[850px] w-[450px] self-center md:w-[1100px] shrink-0 -mt-16 -mb-32 md:my-0"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}

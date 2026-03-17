@@ -8,7 +8,7 @@ export default function MissionStatement() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative bg-[#000421] py-2 md:py-2">
+    <section className="relative bg-[#000421] mt-[100px] pb-2 md:py-2">
       <motion.div
         className="mx-auto max-w-[1211px] px-6 text-center"
         initial={{ opacity: 0, y: 40 }}

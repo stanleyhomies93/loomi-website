@@ -43,17 +43,24 @@ export default function StudiosPage() {
       <section className="relative h-[500px] md:h-[716px] w-full overflow-hidden bg-[#000421]">
         <div className="absolute inset-x-0 top-0 h-full">
           <Image
+            src="/images/studios-hero-mobile.png"
+            alt="Studios hero"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          <Image
             src="/images/studios-hero.png"
             alt="Studios hero"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
             priority
           />
         </div>
 
-        {/* Left dark gradient */}
+        {/* Left dark gradient — desktop only */}
         <div
-          className="pointer-events-none absolute inset-0"
+          className="pointer-events-none absolute inset-0 hidden md:block"
           style={{
             background:
               "linear-gradient(90deg, #000421 0%, transparent 50%)",
@@ -62,15 +69,15 @@ export default function StudiosPage() {
 
         {/* Top gradient for mobile readability */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-[300px] md:hidden"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[200px] md:hidden"
           style={{
-            background: "linear-gradient(to bottom, #000421, transparent)",
+            background: "linear-gradient(to bottom, rgba(0,4,33,0.6), transparent)",
           }}
         />
 
         {/* Bottom gradient */}
         <div
-          className="pointer-events-none absolute bottom-0 left-0 right-0 h-[208px]"
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-[150px] md:h-[208px]"
           style={{
             background: "linear-gradient(to bottom, transparent, #000421)",
           }}
