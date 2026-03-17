@@ -35,7 +35,7 @@ export default function VenturesPage() {
             priority
           />
           <Image
-            src="/images/ventures-hero.jpg"
+            src="/images/venture-scene.jpg"
             alt="Ventures hero"
             fill
             className="object-cover object-center hidden md:block"
