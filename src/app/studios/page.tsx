@@ -114,9 +114,19 @@ export default function StudiosPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            {t.studios.subtitle.split("{ai}")[0]}
-            <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>AI</span>
-            {t.studios.subtitle.split("{ai}")[1]}
+            {t.studios.subtitle.split("{ai}").map((part, i, arr) => (
+              <span key={i}>
+                {part.split("\n").map((line, j, lines) => (
+                  <span key={j}>
+                    {line}
+                    {j < lines.length - 1 && <br />}
+                  </span>
+                ))}
+                {i < arr.length - 1 && (
+                  <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>AI</span>
+                )}
+              </span>
+            ))}
           </motion.h2>
         </div>
 
