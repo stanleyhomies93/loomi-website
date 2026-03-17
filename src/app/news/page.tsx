@@ -5,9 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { newsArticles } from "@/data/news";
+import { getLocalizedArticles } from "@/data/news";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function NewsPage() {
+  const { locale, t } = useLanguage();
+  const articles = getLocalizedArticles(locale);
+
   return (
     <main className="min-h-screen bg-[#000421]">
       <Navbar />
@@ -20,8 +24,8 @@ export default function NewsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Latest{" "}
-          <span className="text-[#f95800]">News</span>
+          {t.home.news.latest}{" "}
+          <span className="text-[#f95800]">{t.home.news.highlight}</span>
         </motion.h1>
       </section>
 
@@ -29,7 +33,7 @@ export default function NewsPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-[1240px] px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {newsArticles.map((article, i) => (
+            {articles.map((article, i) => (
               <motion.div
                 key={article.slug}
                 initial={{ opacity: 0, y: 40 }}

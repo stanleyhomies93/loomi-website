@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function DigitalPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   return (
     <main className="min-h-screen bg-[#000421]">
@@ -81,14 +81,26 @@ export default function DigitalPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            {t.digital.subtitle.line1}
-            <br className="md:hidden" />
-            {" "}
-            <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>
-              {t.digital.subtitle.highlight}
-            </span>
-            <br />
-            {t.digital.subtitle.line2}
+            {locale === "zh" ? (
+              <>
+                {t.digital.subtitle.line1}
+                <br />
+                {t.digital.subtitle.line2}{" "}
+                <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>
+                  {t.digital.subtitle.highlight}
+                </span>
+              </>
+            ) : (
+              <>
+                {t.digital.subtitle.line1}
+                <br className="md:hidden" />{" "}
+                <span className="text-[#f95800]" style={{ WebkitTextFillColor: "#f95800" }}>
+                  {t.digital.subtitle.highlight}
+                </span>
+                <br />
+                {t.digital.subtitle.line2}
+              </>
+            )}
           </motion.h2>
         </div>
 

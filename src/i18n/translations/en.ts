@@ -70,6 +70,8 @@ const en = {
     news: {
       latest: "Latest",
       highlight: "News",
+      backToNews: "Back to News",
+      articleNotFound: "Article Not Found",
     },
     values: {
       our: "Our",

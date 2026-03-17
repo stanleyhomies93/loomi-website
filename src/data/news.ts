@@ -1,3 +1,5 @@
+import { newsArticlesZh } from "./newsZh";
+
 export interface NewsArticle {
   slug: string;
   title: string;
@@ -267,4 +269,11 @@ export const newsArticles: NewsArticle[] = [
 
 export function getArticleBySlug(slug: string): NewsArticle | undefined {
   return newsArticles.find((article) => article.slug === slug);
+}
+
+export function getLocalizedArticles(locale: string): NewsArticle[] {
+  if (locale === "zh") {
+    return newsArticlesZh;
+  }
+  return newsArticles;
 }

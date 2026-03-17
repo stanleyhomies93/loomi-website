@@ -5,12 +5,15 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { getArticleBySlug, newsArticles } from "@/data/news";
+import { getLocalizedArticles } from "@/data/news";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function NewsArticlePage() {
   const params = useParams();
   const slug = params.slug as string;
-  const article = getArticleBySlug(slug);
+  const { locale, t } = useLanguage();
+  const articles = getLocalizedArticles(locale);
+  const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
     return (
@@ -18,13 +21,13 @@ export default function NewsArticlePage() {
         <Navbar />
         <div className="flex flex-col items-center justify-center pt-[200px] pb-24">
           <h1 className="text-[48px] font-semibold text-white mb-4">
-            Article Not Found
+            {t.home.news.articleNotFound}
           </h1>
           <Link
             href="/news"
             className="text-[#f95800] text-[18px] hover:underline"
           >
-            Back to News
+            {t.home.news.backToNews}
           </Link>
         </div>
         <Footer />
@@ -108,7 +111,7 @@ export default function NewsArticlePage() {
                 strokeLinejoin="round"
               />
             </svg>
-            Back to News
+            {t.home.news.backToNews}
           </Link>
         </div>
       </section>

@@ -4,15 +4,15 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { newsArticles } from "@/data/news";
+import { getLocalizedArticles } from "@/data/news";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function LatestNews() {
-  const displayedArticles = newsArticles.slice(0, 3);
+  const { t, locale } = useLanguage();
+  const displayedArticles = getLocalizedArticles(locale).slice(0, 3);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const { t } = useLanguage();
 
   const checkScroll = () => {
     const el = scrollRef.current;
