@@ -157,8 +157,10 @@ export default function Ecosystem() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Gradient - strengthens on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/50 via-[30%] to-transparent to-[60%] transition-all duration-300 group-hover:via-[#000421]/70 group-hover:via-[45%] group-hover:to-[#000421]/30" />
+                {/* Gradient - default state */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#000421] via-[#000421]/50 via-[30%] to-transparent to-[60%] transition-opacity duration-300 group-hover:opacity-0" />
+                {/* Dark blue overlay on hover */}
+                <div className="absolute inset-0 bg-[#000421]/85 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 {/* Content area */}
                 <div className="absolute bottom-10 left-12 right-20 transition-all duration-300 group-hover:bottom-0 group-hover:top-0 group-hover:left-16 group-hover:right-16 group-hover:flex group-hover:flex-col group-hover:items-center group-hover:justify-center">
