@@ -22,7 +22,7 @@ const productionVideos = [
 ];
 
 export default function StudiosPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const features = t.studios.features.map((f, i) => ({
     ...f,
@@ -137,7 +137,7 @@ export default function StudiosPage() {
             alt=""
             width={444}
             height={296}
-            className="opacity-60 w-[250px] md:w-[300px] h-auto"
+            className="opacity-60 w-[150px] md:w-[300px] h-auto"
           />
         </div>
       </section>
@@ -145,20 +145,34 @@ export default function StudiosPage() {
       {/* IMAGINARY Section */}
       <section className="relative bg-[#000421] py-4 md:py-4">
         <div className="mx-auto max-w-[1240px] px-6">
-          <motion.h2
-            className="mb-6 text-center text-[36px] md:text-[72px] font-bold uppercase tracking-[4px] md:tracking-[8px]"
-            style={{
-              backgroundImage: "linear-gradient(to right, #f95800, #ff8a00)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
+          <motion.div
+            className="mb-6 flex flex-col items-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            {t.studios.imaginary.heading}
-          </motion.h2>
+            {locale === "zh" && (
+              <h2
+                className="text-[42px] md:text-[72px] font-bold mb-2"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(180deg, #e8eef5 0%, #a8b8cc 40%, #dce4ed 60%, #8a9db5 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                幻映
+              </h2>
+            )}
+            <Image
+              src="/images/imaginary-logo.png"
+              alt={t.studios.imaginary.heading}
+              width={600}
+              height={120}
+              className="w-[280px] md:w-[500px] h-auto"
+            />
+          </motion.div>
           <motion.p
             className="mx-auto max-w-[1166px] text-center text-[16px] leading-[1.6] text-white/70"
             initial={{ opacity: 0, y: 20 }}
