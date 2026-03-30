@@ -10,7 +10,7 @@ export default function Footer() {
 
   const ecosystemLinks = [
     { label: t.footer.loomiApp, href: "https://app.loomi.asia/" },
-    { label: t.footer.imaginary, href: "https://preview.imaginary-ai.com/" },
+    { label: t.footer.imaginary, href: "https://www.imaginary-ai.com/" },
   ];
 
   const companyLinks = [
